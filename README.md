@@ -1,1 +1,1 @@
-# DDJD-Demo
+# Path of Excelence - Demo
