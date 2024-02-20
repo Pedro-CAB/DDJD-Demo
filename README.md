@@ -1,11 +1,11 @@
 # Path of Excelence - Demo
 ## Project Requirements
-- [] Side View
-- [] Autonomous NPC's
-- [] Goal: Reach the exit
-- [] Minimum of 3 types of Actions/Effects
-- [] Minimum of 2 type of Obstacles
-- [] Score
+- [ ] Side View
+- [ ] Autonomous NPC's
+- [ ] Goal: Reach the exit
+- [ ] Minimum of 3 types of Actions/Effects
+- [ ] Minimum of 2 type of Obstacles
+- [ ] Score
 ## Game Mechanics
 ### Side View
 ### Autonomous NPC's
