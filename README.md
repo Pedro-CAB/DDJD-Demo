@@ -9,12 +9,17 @@
 ## Game Mechanics
 ### Side View
 ### Autonomous NPC's
+Students will walk right from the entrance of the level while they can and will react to what they encounter along their path:
+- If they fall into a big hole, they die
+- If they find a wall or pile of paper blocking their path they start walking the other way
+- If they find stairs, they keep walking through them
+- If they find the level exit, they leave the level successfully
 ### Actions/Effects (Min. 3)
 There are two types of usable items on Path of Excellence:
-- **Actions:** Can be positioned on a point in the map. The first student that picks it up, uses it to perform a specific action and then returns to acting normally, assuming it did not die in the process.
-- **Effects:** Can be given to specific students, changing their status and giving that specific student an ability. A student cannot have more than one effect active over itself at the same time.
+- **Actions:** Can be given to specific students, chaging their status temporarily until the given ability is used. A student cannot have more than one action/effect active over itself at the same time so, if it receives a second effect, the first one is lost.
+- **Effects:** Can be given to specific students, changing their status permanently and giving that specific student an ability. A student cannot have more than one action/effect active over itself at the same time so, if it receives a second effect, the first one is lost.
 #### Action : Calculator
-You can give a calculator to a student. As soon as a student picks this effect, he/she will calculate a bar plot that will form an ascending stairway that allows him/her to ascend himself/herself a bit.
+You can command a student to make calculations. After using this action on a student, if they find a wall, pile of paper or cliff in front of them, they will create a stairway out of a coloured bar plot, allowing himself/herself and other students to climb to higher points or descent to lower points safely. After building a set of stairs, the effect wears off. The calculator wont activate itself unless the resulting stairway would take the students somewhere (for example it won't activate on the limits of the level).
 #### Effect : Study
 You can command a student to study. After using this action on a student, if they find a pile of papers in their way, they won't go back anymore, instead reading the contents of the pile of papers and removing them from the map, for others to be able to traverse it.
 ### Obstacles (Min. 2)
