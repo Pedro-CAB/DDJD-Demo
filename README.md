@@ -31,7 +31,7 @@ You can command a student to check the theoretical slides of the subject. After 
 #### Effect : Clear
 You can clean effects from students and make them go back to being a normal student without any active effects. This won't make the player recover effects he/she already used on students.
 #### Effect : Monitor
-You can command a student to be a monitor, guiding other student through Doubt Zones. Students with this effect will illuminate a certain area around them inside Doubt Zones, allowing the player to interact with students in the illuminated zone and see what's inside.
+You can command a student to be a monitor, guiding other students through Doubt Zones. Students with this effect will illuminate a certain area around them inside Doubt Zones, allowing the player to interact with students in the illuminated zone and see what's inside.
 #### Effect : Study
 You can command a student to study. After using this action on a student, if they find a pile of papers in their way, they won't go back anymore, instead reading the contents of the pile of papers and removing them from the map, for others to be able to traverse it.
 ### Obstacles (Min. 2)
