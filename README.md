@@ -15,7 +15,7 @@ Path of Excelence will be developed in 2D, with a side view perspective similar 
 	- Time passed since beggining of the level
 ### Autonomous NPC's
 Students will walk right from the entrance of the level while they can and will react to what they encounter along their path:
-- If they fall into a big hole, they die
+- If they fall from a considerable height or into lava, they die.
 - If they find a wall or pile of paper blocking their path they start walking the other way
 - If they find stairs, they keep walking through them
 - If they find the level exit, they leave the level successfully
