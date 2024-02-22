@@ -1,4 +1,4 @@
-# Path of Excelence - Demo
+# Path of Excelence
 ## Project Requirements
 - [ ] Side View
 - [ ] Autonomous NPC's
@@ -7,6 +7,7 @@
 - [ ] Minimum of 2 type of Obstacles
 - [ ] Score
 ## Game Mechanics
+In Path of Excellence, your objective is to guide a bunch of students through their journey during a college exam. By assigning Actions and Effects to them, you give them abilities they can use in order to arrive the end of the exam without dooming themselves! Help them find the best path to a good grade, prevent them of falling prey to dangerous traps and do it as fast as you can, as you help these students trail their path to excellence!
 ### Side View
 Path of Excelence will be developed in 2D, with a side view perspective similar to a platformer. Besides the level and the students, there will also be a GUI with the Actions/Effects you can apply to the Students and information about:
 	- How many students are alive
@@ -37,13 +38,20 @@ You can command a student to study. After using this action on a student, if the
 ### Obstacles (Min. 2)
 #### Environmental Obstacles
 The students can find difficulties merely by the design of the level, such as:
-- Holes that will kill them if they fall inside them
-- Cliffs that will kill them if they don't have a way of descenting safely from them
-- Walls that will make them go back when they find them, forcing them to either find another way or use some action/effect to climb them
+- Holes that will kill them if they fall inside them. The bottom of holes that can't or houldn't be achieved by students without them dying can be replaced with lava or something dangerous, to signal the player they shouldn't send the students there.
+- Cliffs that will kill them if they don't have a way of descenting safely from them. The bottom of cliffs that can't or houldn't be achieved by students without them dying can be replaced with lava or something dangerous, to signal the player they shouldn't send the students there.
+- Walls that will make them go back when they find them, forcing them to either find another way or use some action/effect to climb them, if they are low enough for that.
 #### Doubt Zones
 Some sections of the level may be completely dark and full of interrogation marks, not allowing the player to see what's going on inside them. Students will still go inside them and act normally, ignoring the darkness, but the player will not be able to see what's happening. The player won't be able to interact with students while they are in a Doubt Zone, unless the Doubt Zone is illuminated somehow.
 #### Piles of Paper
-Piles of Paper can be found blocking the way to the exit. Students that encounter them will just start walking back unless they are given some command that allows them to deal with them or go around them.
+Piles of Paper can be found blocking the way to the exit. Students that encounter them will just start walking back unless they are given some command that allows them to deal with them or go around them. Not all Piles of Paper necessarily need to be destroyed for the level to be completed. Some might even be needed to block the students' way to prevent them from deviating from the correct path.
+#### Shortcuts
+Shortcuts manifest as portals that take students from a point to another. While some may be helpful to the journey, others may conduct students to traps. There are many ways that Shortcuts can appear:
+	- **One Way:** There's two portals of the same color. Students that enter one exit through the other. Once a student traverses the portal, it can't go back through the portal it exited.
+	- **Two Ways:** Same as the previous one, except the student can go back through the exited portal to the original one it traversed.
+	- **Test Versions:** There's an initial portal that conects to a set of n others. Everytime a student travereses the portal, it gets sent to another of the n portals. The next student that does the same will be teleported to other of the n portals. For example, if we have 3 portals, a student would be sent to 1, the next to 2, the next to 3, the next to 1 and repeat. These portals add difficulty to the levels by scattering students around different paths to the exit.
+#### Trivia Doors and Switches
+Trivia Switches are golden blocks with interrogation marks that can be found along the way of the students. Trivia Doors are locked by default and, while in that state, are the same as walls for the students. Once a student reaches the Trivia Switch, a prompt will appear for the player to answer a four-option question. If the player answers correctly, the switch is enabled, the door is open and students can't interact with the switch anymore. If the player fails the question, the student who found the switch dies. Once a new student reaches that same switch, a new question appears in the prompt. The game is paused while the Trivia Switches are being used and the questions are timed. Some Trivia Doors may have to be opened for the students to reach the exit while others may provide only shortcuts. Normally, the Trivia Switch will be outside the main path to the exit, to make things more challenging for the player. 
 ### Level Exit
 The Level Exit is a desk where a professor is waiting for the students to deliver their exam.
 ### Scoring
