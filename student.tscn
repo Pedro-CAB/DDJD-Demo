@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bg6gttrox42w6"]
+
+[ext_resource type="PackedScene" uid="uid://c3rjmal5or4vd" path="res://tilemaps/student_sprites.tscn" id="1_jxbvq"]
+[ext_resource type="Script" path="res://student.gd" id="1_vloaw"]
+[ext_resource type="Texture2D" uid="uid://n0wfqfok6jb8" path="res://Basic_red_dot.png" id="2_wb2gc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aipop"]
+radius = 7.0
+height = 16.0
+
+[node name="Student" type="CharacterBody2D"]
+collision_mask = 3
+script = ExtResource("1_vloaw")
+
+[node name="Student Sprites" parent="." instance=ExtResource("1_jxbvq")]
+visible = false
+position = Vector2(-16, -16)
+scale = Vector2(2, 2)
+layer_0/tile_data = PackedInt32Array(0, 0, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_aipop")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(0.025, 0.032)
+texture = ExtResource("2_wb2gc")
