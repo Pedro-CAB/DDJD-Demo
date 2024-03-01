@@ -1,13 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://26wmnutay2hs"]
+[gd_scene load_steps=5 format=3 uid="uid://26wmnutay2hs"]
 
+[ext_resource type="Script" path="res://test/movement.gd" id="1_gx1tk"]
 [ext_resource type="PackedScene" uid="uid://bjxihc0qyyllu" path="res://tilemaps/sky_and_soil.tscn" id="1_pbksg"]
 [ext_resource type="PackedScene" uid="uid://bg6gttrox42w6" path="res://student.tscn" id="2_irepa"]
+[ext_resource type="PackedScene" uid="uid://ct2e4biuuaudu" path="res://level_entrance.tscn" id="3_yalv7"]
 
 [node name="Movement" type="Node2D"]
+script = ExtResource("1_gx1tk")
 
 [node name="Sky and Soil" parent="." instance=ExtResource("1_pbksg")]
-layer_2/tile_data = PackedInt32Array(131076, 393216, 3, 131077, 458752, 3, 131078, 524288, 3, 131073, 196608, 3, 131074, 262144, 3, 131075, 327680, 3, 131079, 589824, 3, 131080, 655360, 3, 131081, 720896, 3, 65543, 589824, 2, 65544, 655360, 2, 65545, 720896, 2, 65547, 851968, 2, 131083, 851968, 3, 131082, 786432, 3, 65546, 786432, 2, 196620, 1179648, 6, 196621, 1245184, 6, 196622, 1310720, 6, 196623, 1376256, 6, 65549, 1245184, 4, 131085, 1245184, 5)
+position = Vector2(-1, 0)
+layer_2/tile_data = PackedInt32Array(131076, 393216, 3, 131077, 458752, 3, 131078, 524288, 3, 131073, 196608, 3, 131074, 262144, 3, 131075, 327680, 3, 131079, 589824, 3, 131080, 655360, 3, 131081, 720896, 3, 65543, 589824, 2, 65544, 655360, 2, 65545, 720896, 2, 65546, 786432, 2, 196620, 1179648, 6, 196621, 1245184, 6, 196622, 1310720, 6, 196623, 1376256, 6, 65549, 1245184, 4, 131085, 1245184, 5, 131072, 196608, 3, 196607, 196608, 3, 196618, 1048576, 6, 196619, 1114112, 6, 196617, 983040, 6, 131082, 786432, 3, 131083, 851968, 3, 65547, 851968, 2, 262151, 1310720, 3, 327687, 1310720, 4, 393223, 1310720, 5, 262152, 1376256, 3, 327688, 1376256, 4, 393224, 1376256, 5, 327685, 1310720, 3, 393221, 1310720, 4, 458757, 1310720, 5, 327686, 1376256, 3, 393222, 1376256, 4, 458758, 1376256, 5, 393219, 1310720, 3, 458755, 1310720, 4, 524291, 1310720, 5, 393220, 1376256, 3, 458756, 1376256, 4, 524292, 1376256, 5, 393217, 458752, 268435461, 458753, 458752, 268435462, 524289, 1310720, 5, 393218, 1376256, 3, 458754, 1376256, 4, 524290, 1376256, 5, 327681, 458752, 268435460)
 
 [node name="Student" parent="." instance=ExtResource("2_irepa")]
 position = Vector2(102, 15)
 scale = Vector2(1.5, 1.5)
+
+[node name="Level Entrance" parent="." instance=ExtResource("3_yalv7")]
+
+[node name="Spawned Students" type="Node2D" parent="."]
+position = Vector2(-27, 84)
+
+[connection signal="spawn_student" from="Level Entrance" to="." method="_on_level_entrance_spawn_student"]
