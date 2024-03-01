@@ -2,8 +2,7 @@ extends Node2D
 
 signal spawn_student()
 
-var initial_amount = 5
-var student_amount = initial_amount
+var student_amount = 5
 
 func _ready():
 	$SpawnTimer.start()
