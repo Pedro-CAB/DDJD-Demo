@@ -2,14 +2,13 @@ extends Node2D
 
 signal spawn_student()
 
-var student_amount:int = 20
+var initial_amount = 5
+var student_amount = initial_amount
 
-func _process(delta):
-	if student_amount > 0:
-		student_amount -= 1
-		$SpawnTimer.start(1)
-	else:
-		pass
+func _ready():
+	$SpawnTimer.start()
 
 func _on_spawn_timer_timeout():
-	spawn_student.emit()
+	if (student_amount > 0):
+		spawn_student.emit()
+	student_amount -= 1
