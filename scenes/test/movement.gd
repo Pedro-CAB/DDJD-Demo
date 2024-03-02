@@ -1,6 +1,6 @@
 extends Node2D
 
-var student_scene = preload("res://student.tscn")
+var student_scene = preload("res://scenes/elements/student.tscn")
 
 func _ready():
 	# How Many Students Should Spawn?
