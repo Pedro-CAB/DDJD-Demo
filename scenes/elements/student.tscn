@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bg6gttrox42w6"]
+[gd_scene load_steps=6 format=3 uid="uid://bg6gttrox42w6"]
 
 [ext_resource type="Script" path="res://scripts/student.gd" id="1_uspsx"]
 [ext_resource type="PackedScene" uid="uid://c3rjmal5or4vd" path="res://tilemaps/student_sprites.tscn" id="2_nhbn6"]
@@ -8,9 +8,13 @@
 radius = 7.0
 height = 16.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6f0an"]
+size = Vector2(22.0909, 21.087)
+
 [node name="Student" type="CharacterBody2D"]
 scale = Vector2(1.44856, 1.53333)
 collision_mask = 2
+input_pickable = true
 script = ExtResource("1_uspsx")
 
 [node name="Student Sprites" parent="." instance=ExtResource("2_nhbn6")]
@@ -27,3 +31,16 @@ texture = ExtResource("3_nrcmm")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_aipop")
+
+[node name="Clickable Area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clickable Area"]
+position = Vector2(-3.2918e-07, 0.54349)
+shape = SubResource("RectangleShape2D_6f0an")
+
+[node name="Stop Timer" type="Timer" parent="."]
+
+[connection signal="input_event" from="Clickable Area" to="." method="_on_clickable_area_input_event"]
+[connection signal="mouse_entered" from="Clickable Area" to="." method="_on_clickable_area_mouse_entered"]
+[connection signal="mouse_exited" from="Clickable Area" to="." method="_on_clickable_area_mouse_exited"]
+[connection signal="timeout" from="Stop Timer" to="." method="_on_stop_timer_timeout"]

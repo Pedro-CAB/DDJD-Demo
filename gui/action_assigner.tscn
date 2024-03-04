@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg254sg3b5nwi"]
+
+[ext_resource type="Script" path="res://gui/action_assigner.gd" id="1_yicjd"]
+[ext_resource type="PackedScene" uid="uid://h84qg1mbpfq2" path="res://gui/action_effect_panel.tscn" id="2_h74us"]
+
+[node name="Action Assigner" type="Node2D"]
+scale = Vector2(0.593047, 1)
+script = ExtResource("1_yicjd")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ActionEffect Panel" parent="CanvasLayer" instance=ExtResource("2_h74us")]
+anchor_left = 0.0
+anchor_top = 0.861
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -71.0
+offset_top = -560.928
+offset_right = -77.0
+offset_bottom = -555.0
+
+[connection signal="calculator_selected" from="CanvasLayer/ActionEffect Panel" to="." method="_on_action_effect_panel_calculator_selected"]
+[connection signal="clear_selected" from="CanvasLayer/ActionEffect Panel" to="." method="_on_action_effect_panel_clear_selected"]
+[connection signal="monitor_selected" from="CanvasLayer/ActionEffect Panel" to="." method="_on_action_effect_panel_monitor_selected"]
+[connection signal="ruler_selected" from="CanvasLayer/ActionEffect Panel" to="." method="_on_action_effect_panel_ruler_selected"]
+[connection signal="slides_selected" from="CanvasLayer/ActionEffect Panel" to="." method="_on_action_effect_panel_slides_selected"]
+[connection signal="study_selected" from="CanvasLayer/ActionEffect Panel" to="." method="_on_action_effect_panel_study_selected"]

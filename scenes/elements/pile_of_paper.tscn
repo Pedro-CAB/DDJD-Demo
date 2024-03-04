@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://qpqmsgoaoxen"]
+
+[ext_resource type="Texture2D" uid="uid://b0d4qdexgy0fn" path="res://graphics/pngtree-pile-of-books-png-image_6210900.png" id="1_dhhou"]
+[ext_resource type="Script" path="res://scenes/elements/pile_of_paper.gd" id="1_g5sbt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfhvw"]
+size = Vector2(277, 198)
+
+[node name="Pile of Paper" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_g5sbt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 19)
+shape = SubResource("RectangleShape2D_lfhvw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_dhhou")
+
+[node name="Student Detection" type="Area2D" parent="."]
+position = Vector2(112, 33)
+scale = Vector2(1.4939, 1.02564)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Student Detection"]
+position = Vector2(-75, -14)
+shape = SubResource("RectangleShape2D_lfhvw")
+
+[connection signal="body_entered" from="Student Detection" to="." method="_on_student_detection_body_entered"]

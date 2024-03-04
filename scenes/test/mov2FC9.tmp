@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://26wmnutay2hs"]
+[gd_scene load_steps=5 format=3 uid="uid://26wmnutay2hs"]
 
 [ext_resource type="Script" path="res://scenes/test/movement.gd" id="1_gx1tk"]
 [ext_resource type="PackedScene" uid="uid://bjxihc0qyyllu" path="res://tilemaps/sky_and_soil.tscn" id="1_pbksg"]
 [ext_resource type="PackedScene" uid="uid://bg254sg3b5nwi" path="res://gui/action_assigner.tscn" id="2_1ua4q"]
 [ext_resource type="PackedScene" uid="uid://ct2e4biuuaudu" path="res://scenes/elements/level_entrance.tscn" id="3_yalv7"]
-[ext_resource type="PackedScene" uid="uid://qpqmsgoaoxen" path="res://scenes/elements/pile_of_paper.tscn" id="5_22yoa"]
 
 [node name="Movement" type="Node2D"]
 script = ExtResource("1_gx1tk")
@@ -19,17 +18,7 @@ layer_2/tile_data = PackedInt32Array(131076, 393216, 3, 131077, 458752, 3, 13107
 position = Vector2(-27, 84)
 
 [node name="Action Assigner" parent="." instance=ExtResource("2_1ua4q")]
-position = Vector2(7.62939e-06, 0)
+position = Vector2(102, 15)
 scale = Vector2(0.889571, 1.5)
 
-[node name="Pile of Paper" parent="." instance=ExtResource("5_22yoa")]
-position = Vector2(117, 86)
-scale = Vector2(0.15315, 0.220197)
-
-[node name="Pile of Paper2" parent="." instance=ExtResource("5_22yoa")]
-position = Vector2(228, 85)
-scale = Vector2(0.15315, 0.220197)
-
 [connection signal="spawn_student" from="Level Entrance" to="." method="_on_level_entrance_spawn_student"]
-[connection signal="study_found_paper" from="Pile of Paper" to="." method="_on_pile_of_paper_study_found_paper"]
-[connection signal="study_found_paper" from="Pile of Paper2" to="." method="_on_pile_of_paper_study_found_paper"]
