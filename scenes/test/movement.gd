@@ -19,8 +19,9 @@ func _on_level_entrance_spawn_student():
 
 func _on_student_is_clicked(node):
 	if Input.is_action_just_pressed("Assign  Action or Effect"):
-		node.state = $"Action Assigner".state
-		$"Action Assigner".state = Effects.None
+		if $"Action Assigner".state != 6:
+			node.state = $"Action Assigner".state
+			$"Action Assigner".state = Effects.None
 
 func _on_student_is_hovered(node):
 	pass
@@ -33,3 +34,4 @@ func _on_pile_of_paper_study_found_paper(student, paper):
 	print("Study Found Paper!")
 	student.temporary_stop(1.5)  #Student stops moving for 1.5 secs
 	paper.queue_free() #Delete Paper Pile 
+	student.state = 6 # Set Student state to None again

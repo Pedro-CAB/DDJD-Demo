@@ -23,8 +23,13 @@ position = Vector2(7.62939e-06, 0)
 scale = Vector2(0.889571, 1.5)
 
 [node name="Pile of Paper" parent="." instance=ExtResource("5_22yoa")]
-position = Vector2(273, 85)
+position = Vector2(117, 86)
+scale = Vector2(0.15315, 0.220197)
+
+[node name="Pile of Paper2" parent="." instance=ExtResource("5_22yoa")]
+position = Vector2(228, 85)
 scale = Vector2(0.15315, 0.220197)
 
 [connection signal="spawn_student" from="Level Entrance" to="." method="_on_level_entrance_spawn_student"]
 [connection signal="study_found_paper" from="Pile of Paper" to="." method="_on_pile_of_paper_study_found_paper"]
+[connection signal="study_found_paper" from="Pile of Paper2" to="." method="_on_pile_of_paper_study_found_paper"]
