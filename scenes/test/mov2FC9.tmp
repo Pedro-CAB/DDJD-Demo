@@ -18,7 +18,7 @@ layer_2/tile_data = PackedInt32Array(131076, 393216, 3, 131077, 458752, 3, 13107
 position = Vector2(-27, 84)
 
 [node name="Action Assigner" parent="." instance=ExtResource("2_1ua4q")]
-position = Vector2(7.62939e-06, 0)
+position = Vector2(102, 15)
 scale = Vector2(0.889571, 1.5)
 
 [connection signal="spawn_student" from="Level Entrance" to="." method="_on_level_entrance_spawn_student"]
