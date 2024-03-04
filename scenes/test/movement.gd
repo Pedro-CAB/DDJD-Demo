@@ -27,3 +27,9 @@ func _on_student_is_hovered(node):
 	
 func _on_student_is_not_hovered(node):
 	pass
+
+
+func _on_pile_of_paper_study_found_paper(student, paper):
+	print("Study Found Paper!")
+	student.temporary_stop(1.5)  #Student stops moving for 1.5 secs
+	paper.queue_free() #Delete Paper Pile 

@@ -4,13 +4,15 @@ signal is_clicked(node)
 signal is_hovered(node)
 signal is_not_hovered(node)
 
-const SPEED = 25.0
+const SPEED = 25.0 #Standard Speed
+#const SPEED = 100.0 #For testing purposes
 
 enum Effects {Calculator, Monitor, Ruler, Slides, Study, CLear, None}
 var state = Effects.None #by default, the student has no effects applied
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var prev_direction : Vector2 #to save direction before stopping
 var direction : Vector2
 
 func _ready():
@@ -30,6 +32,13 @@ func _physics_process(delta):
 
 	move_and_slide()
 
+# Stop Student Movement for time seconds
+func temporary_stop(time):
+	prev_direction = direction
+	direction = Vector2.ZERO
+	$"Stop Timer".start(time)
+	
+
 # Check if Student was clicked
 func _on_clickable_area_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("Assign  Action or Effect"):
@@ -41,3 +50,7 @@ func _on_clickable_area_mouse_entered():
 
 func _on_clickable_area_mouse_exited():
 	is_not_hovered.emit($".")
+
+
+func _on_stop_timer_timeout():
+	direction = prev_direction

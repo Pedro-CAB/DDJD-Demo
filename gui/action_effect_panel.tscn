@@ -48,7 +48,7 @@ text = "Study
 
 [node name="Clear Button" type="Button" parent="Panel"]
 layout_mode = 2
-text = "Study
+text = "Clear
 "
 
 [connection signal="pressed" from="Panel/Calculator Button" to="." method="_on_calculator_button_pressed"]
