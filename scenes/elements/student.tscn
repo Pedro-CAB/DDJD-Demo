@@ -1,32 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://bg6gttrox42w6"]
+[gd_scene load_steps=5 format=3 uid="uid://bg6gttrox42w6"]
 
 [ext_resource type="Script" path="res://scripts/student.gd" id="1_uspsx"]
-[ext_resource type="PackedScene" uid="uid://c3rjmal5or4vd" path="res://tilemaps/student_sprites.tscn" id="2_nhbn6"]
-[ext_resource type="Texture2D" uid="uid://n0wfqfok6jb8" path="res://graphics/Basic_red_dot.png" id="3_nrcmm"]
+[ext_resource type="Texture2D" uid="uid://dfvph7csagwpb" path="res://graphics/student.png" id="3_3cedn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aipop"]
-radius = 7.0
+radius = 4.83239
 height = 16.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6f0an"]
 size = Vector2(22.0909, 21.087)
 
 [node name="Student" type="CharacterBody2D"]
-scale = Vector2(1.44856, 1.53333)
+scale = Vector2(1.90401, 1.86599)
 collision_mask = 2
 input_pickable = true
 script = ExtResource("1_uspsx")
 
-[node name="Student Sprites" parent="." instance=ExtResource("2_nhbn6")]
-visible = false
-position = Vector2(-16, -16)
-scale = Vector2(2, 2)
-layer_0/tile_data = PackedInt32Array(0, 0, 7)
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 1)
-scale = Vector2(0.025, 0.032)
-texture = ExtResource("3_nrcmm")
+position = Vector2(0, 0.652175)
+scale = Vector2(0.061197, 0.063293)
+texture = ExtResource("3_3cedn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)

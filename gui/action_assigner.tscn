@@ -10,14 +10,14 @@ script = ExtResource("1_yicjd")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ActionEffect Panel" parent="CanvasLayer" instance=ExtResource("2_h74us")]
-anchor_left = 0.0
-anchor_top = 0.861
+anchor_left = 0.377
+anchor_top = 0.921
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 477.0
-offset_top = 56.072
-offset_right = 471.0
-offset_bottom = 62.0
+offset_left = -487.304
+offset_top = -598.808
+offset_right = -6.0
+offset_bottom = -529.0
 
 [connection signal="calculator_selected" from="CanvasLayer/ActionEffect Panel" to="." method="_on_action_effect_panel_calculator_selected"]
 [connection signal="clear_selected" from="CanvasLayer/ActionEffect Panel" to="." method="_on_action_effect_panel_clear_selected"]
