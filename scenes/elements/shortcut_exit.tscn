@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://qimq2syl7m1w"]
+
+[ext_resource type="Texture2D" uid="uid://m8v4cw0xsv8g" path="res://graphics/Explosion_A_02.png" id="1_6a3kx"]
+
+[node name="Shortcut Exit" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_6a3kx")

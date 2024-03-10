@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://26wmnutay2hs"]
+[gd_scene load_steps=10 format=3 uid="uid://26wmnutay2hs"]
 
 [ext_resource type="Script" path="res://scenes/test/movement.gd" id="1_gx1tk"]
 [ext_resource type="PackedScene" uid="uid://bjxihc0qyyllu" path="res://tilemaps/sky_and_soil.tscn" id="1_pbksg"]
@@ -7,7 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://5mkdw7gcq733" path="res://scenes/elements/level_exit.tscn" id="4_ylwnc"]
 [ext_resource type="PackedScene" uid="uid://qpqmsgoaoxen" path="res://scenes/elements/pile_of_paper.tscn" id="5_22yoa"]
 [ext_resource type="Texture2D" uid="uid://vkg2brbnfk52" path="res://graphics/Pad_3_4.png" id="6_ppx2b"]
-[ext_resource type="Texture2D" uid="uid://m8v4cw0xsv8g" path="res://graphics/Explosion_A_02.png" id="7_xd1rr"]
+[ext_resource type="PackedScene" uid="uid://cyltucxvl72v7" path="res://scenes/elements/shortcut_entrance.tscn" id="9_3di23"]
+[ext_resource type="PackedScene" uid="uid://qimq2syl7m1w" path="res://scenes/elements/shortcut_exit.tscn" id="9_pts5g"]
 
 [node name="Movement" type="Node2D"]
 script = ExtResource("1_gx1tk")
@@ -24,7 +25,7 @@ position = Vector2(2192, 883)
 scale = Vector2(3.60346, 3.60748)
 
 [node name="Spawned Students" type="Node2D" parent="."]
-position = Vector2(16, 244)
+position = Vector2(653, 359)
 
 [node name="Action Assigner" parent="." instance=ExtResource("2_1ua4q")]
 position = Vector2(13, 237)
@@ -61,18 +62,17 @@ position = Vector2(1319.25, 374)
 scale = Vector2(0.346523, 0.3875)
 texture = ExtResource("6_ppx2b")
 
-[node name="Shortcut 1" type="Sprite2D" parent="."]
-position = Vector2(774, 359)
-scale = Vector2(0.697266, 0.769531)
-texture = ExtResource("7_xd1rr")
-
-[node name="Shortcut 2" type="Sprite2D" parent="."]
-position = Vector2(907, 70)
-scale = Vector2(0.707031, 0.757813)
-texture = ExtResource("7_xd1rr")
-
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(478, 322)
+position = Vector2(576, 322)
+
+[node name="Shortcut Entrance" parent="." instance=ExtResource("9_3di23")]
+position = Vector2(774, 354)
+scale = Vector2(3.29294, 3.69754)
+collision_layer = 2
+
+[node name="Shortcut Exit" parent="." instance=ExtResource("9_pts5g")]
+position = Vector2(905, 70)
+scale = Vector2(0.743266, 0.970005)
 
 [connection signal="spawn_student" from="Level Entrance" to="." method="_on_level_entrance_spawn_student"]
 [connection signal="student_arrived_despawner" from="Level Exit" to="." method="_on_level_exit_student_arrived_despawner"]
@@ -81,3 +81,4 @@ position = Vector2(478, 322)
 [connection signal="study_found_paper" from="Pile of Paper2" to="." method="_on_pile_of_paper_study_found_paper"]
 [connection signal="study_found_paper" from="Pile of Paper3" to="." method="_on_pile_of_paper_study_found_paper"]
 [connection signal="study_found_paper" from="Pile of Paper4" to="." method="_on_pile_of_paper_study_found_paper"]
+[connection signal="body_entered" from="Shortcut Entrance" to="." method="_on_shortcut_entrance_body_entered"]

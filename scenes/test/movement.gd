@@ -12,7 +12,7 @@ func _ready():
 	
 func _process(_delta):
 	if Input.is_action_pressed("Move Camera Left"):
-		if $Camera2D.position.x - camera_speed > 478:
+		if $Camera2D.position.x - camera_speed > 576:
 			$Camera2D.position.x = $Camera2D.position.x - camera_speed
 	elif Input.is_action_pressed("Move Camera Right"):
 		if $Camera2D.position.x + camera_speed < 1728:
@@ -61,3 +61,8 @@ func _on_level_exit_student_arrived_exit(node):
 
 func _on_level_exit_student_arrived_despawner(node):
 	node.queue_free()
+
+
+func _on_shortcut_entrance_body_entered(body):
+	print("Student Entered Shortcut!")
+	body.global_position = $"Shortcut Exit".global_position

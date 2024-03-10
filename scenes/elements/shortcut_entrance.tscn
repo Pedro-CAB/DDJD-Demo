@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyltucxvl72v7"]
+
+[ext_resource type="Texture2D" uid="uid://m8v4cw0xsv8g" path="res://graphics/Explosion_A_02.png" id="1_ytsuj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fvt3c"]
+
+[node name="Shortcut Entrance" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.14112, 0.883021)
+shape = SubResource("CapsuleShape2D_fvt3c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(0.222003, 0.288367)
+texture = ExtResource("1_ytsuj")
