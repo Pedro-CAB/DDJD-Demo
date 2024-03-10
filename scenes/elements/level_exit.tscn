@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://5mkdw7gcq733"]
+
+[ext_resource type="Script" path="res://Level Exit.gd" id="1_m3ruu"]
+[ext_resource type="Texture2D" uid="uid://c6ahrkiprfiy" path="res://graphics/level_exit.jpg" id="2_8qava"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3mwgp"]
+size = Vector2(41, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y3wsg"]
+size = Vector2(28, 24.5)
+
+[node name="Level Exit" type="Node2D"]
+script = ExtResource("1_m3ruu")
+
+[node name="Student Detector" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Student Detector"]
+position = Vector2(6.5, 0)
+shape = SubResource("RectangleShape2D_3mwgp")
+
+[node name="Student Despawner" type="Area2D" parent="Student Detector"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Student Detector/Student Despawner"]
+position = Vector2(58, 0.25)
+shape = SubResource("RectangleShape2D_y3wsg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(6, 1.90735e-06)
+scale = Vector2(0.0430556, 0.0430556)
+texture = ExtResource("2_8qava")
+
+[connection signal="body_entered" from="Student Detector" to="." method="_on_student_detector_body_entered"]
+[connection signal="body_entered" from="Student Detector/Student Despawner" to="." method="_on_student_despawner_body_entered"]
