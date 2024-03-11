@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2mfnmy3se85c"]
+
+[ext_resource type="Texture2D" uid="uid://denwcn0lndmlv" path="res://graphics/bridge.png" id="1_82kw8"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f5l5r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r6w5o"]
+size = Vector2(382, 26)
+
+[node name="Bridge" type="StaticBody2D"]
+collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_f5l5r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_82kw8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_r6w5o")

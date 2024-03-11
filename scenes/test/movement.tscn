@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://26wmnutay2hs"]
+[gd_scene load_steps=11 format=3 uid="uid://26wmnutay2hs"]
 
 [ext_resource type="Script" path="res://scenes/test/movement.gd" id="1_gx1tk"]
 [ext_resource type="PackedScene" uid="uid://bjxihc0qyyllu" path="res://tilemaps/sky_and_soil.tscn" id="1_pbksg"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://vkg2brbnfk52" path="res://graphics/Pad_3_4.png" id="6_ppx2b"]
 [ext_resource type="PackedScene" uid="uid://cyltucxvl72v7" path="res://scenes/elements/shortcut_entrance.tscn" id="9_3di23"]
 [ext_resource type="PackedScene" uid="uid://qimq2syl7m1w" path="res://scenes/elements/shortcut_exit.tscn" id="9_pts5g"]
+[ext_resource type="PackedScene" uid="uid://d2mfnmy3se85c" path="res://scenes/elements/bridge.tscn" id="10_g1yyk"]
 
 [node name="Movement" type="Node2D"]
 script = ExtResource("1_gx1tk")
@@ -25,7 +26,7 @@ position = Vector2(2192, 883)
 scale = Vector2(3.60346, 3.60748)
 
 [node name="Spawned Students" type="Node2D" parent="."]
-position = Vector2(653, 359)
+position = Vector2(-32, 217)
 
 [node name="Action Assigner" parent="." instance=ExtResource("2_1ua4q")]
 position = Vector2(13, 237)
@@ -73,6 +74,11 @@ collision_layer = 2
 [node name="Shortcut Exit" parent="." instance=ExtResource("9_pts5g")]
 position = Vector2(905, 70)
 scale = Vector2(0.743266, 0.970005)
+
+[node name="Bridge" parent="." instance=ExtResource("10_g1yyk")]
+position = Vector2(479, 407)
+rotation = -0.00473139
+scale = Vector2(0.502877, -0.31156)
 
 [connection signal="spawn_student" from="Level Entrance" to="." method="_on_level_entrance_spawn_student"]
 [connection signal="student_arrived_despawner" from="Level Exit" to="." method="_on_level_exit_student_arrived_despawner"]

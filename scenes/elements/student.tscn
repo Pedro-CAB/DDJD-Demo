@@ -33,6 +33,7 @@ position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_aipop")
 
 [node name="Clickable Area" type="Area2D" parent="."]
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Clickable Area"]
 position = Vector2(-3.2918e-07, 0.54349)

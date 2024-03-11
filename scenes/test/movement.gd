@@ -35,7 +35,7 @@ func _on_level_entrance_spawn_student():
 
 func _on_student_is_clicked(node):
 	if Input.is_action_just_pressed("Assign  Action or Effect"):
-		if $"Action Assigner".state != 6:
+		if $"Action Assigner".state != Effects.None:
 			node.state = $"Action Assigner".state
 			$"Action Assigner".state = Effects.None
 

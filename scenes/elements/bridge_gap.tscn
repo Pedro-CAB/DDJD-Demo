@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://7h7d81uo2tan"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rgxfc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yjuix"]
+
+[node name="Bridge Gap" type="Node2D"]
+position = Vector2(-21, 0)
+
+[node name="Left Cliff" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left Cliff"]
+shape = SubResource("RectangleShape2D_rgxfc")
+
+[node name="Right Cliff" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right Cliff"]
+position = Vector2(41, 0)
+shape = SubResource("RectangleShape2D_yjuix")
