@@ -111,7 +111,6 @@ position = Vector2(774, 354)
 scale = Vector2(3.29294, 3.69754)
 
 [node name="Shortcut Entrance" parent="One-Way Shortcut" instance=ExtResource("9_3di23")]
-scale = Vector2(1, 1)
 collision_layer = 2
 
 [node name="Shortcut Exit" parent="One-Way Shortcut" instance=ExtResource("9_pts5g")]
