@@ -8,7 +8,7 @@ const camera_speed = 10
 
 func _ready():
 	# How Many Students Should Spawn?
-	$"Level Entrance".student_amount = 20
+	$"Entrance and Exit/Level Entrance".student_amount = 20
 	
 func _process(_delta):
 	if Input.is_action_pressed("Move Camera Left"):
@@ -29,15 +29,15 @@ func _on_level_entrance_spawn_student():
 	student.connect("is_clicked",_on_student_is_clicked)
 	student.connect("is_hovered",_on_student_is_hovered)
 	student.connect("is_not_hovered",_on_student_is_not_hovered)
-	student.scale = Vector2(1.5,1.5)
+	student.scale = Vector2(3.5,3.5)
 	$"Spawned Students".add_child(student,true)
 
 
 func _on_student_is_clicked(node):
 	if Input.is_action_just_pressed("Assign  Action or Effect"):
-		if $"Action Assigner".state != Effects.None:
-			node.state = $"Action Assigner".state
-			$"Action Assigner".state = Effects.None
+		if $"GUI/Action Assigner".state != Effects.None:
+			node.state = $"GUI/Action Assigner".state
+			$"GUI/Action Assigner".state = Effects.None
 
 func _on_student_is_hovered(node):
 	pass
@@ -65,4 +65,4 @@ func _on_level_exit_student_arrived_despawner(node):
 
 func _on_shortcut_entrance_body_entered(body):
 	print("Student Entered Shortcut!")
-	body.global_position = $"Shortcut Exit".global_position
+	body.global_position = $"One-Way Shortcut/Shortcut Exit".global_position

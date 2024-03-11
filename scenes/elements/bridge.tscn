@@ -8,6 +8,7 @@
 size = Vector2(382, 26)
 
 [node name="Bridge" type="StaticBody2D"]
+scale = Vector2(0.0848088, -0.215844)
 collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_f5l5r")
 

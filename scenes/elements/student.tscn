@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://scripts/student.gd" id="1_uspsx"]
 [ext_resource type="PackedScene" uid="uid://c3rjmal5or4vd" path="res://tilemaps/student_sprites.tscn" id="2_nhbn6"]
-[ext_resource type="Texture2D" uid="uid://n0wfqfok6jb8" path="res://graphics/Basic_red_dot.png" id="3_nrcmm"]
+[ext_resource type="Texture2D" uid="uid://cmm7duy2vkskf" path="res://graphics/running.png" id="3_mopjn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aipop"]
-radius = 7.0
-height = 16.0
+radius = 5.2897
+height = 11.9155
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6f0an"]
 size = Vector2(22.0909, 21.087)
@@ -24,12 +24,12 @@ scale = Vector2(2, 2)
 layer_0/tile_data = PackedInt32Array(0, 0, 7)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 1)
-scale = Vector2(0.025, 0.032)
-texture = ExtResource("3_nrcmm")
+position = Vector2(0, -0.652175)
+scale = Vector2(0.0337168, 0.0329346)
+texture = ExtResource("3_mopjn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
+scale = Vector2(0.913546, -0.985201)
 shape = SubResource("CapsuleShape2D_aipop")
 
 [node name="Clickable Area" type="Area2D" parent="."]

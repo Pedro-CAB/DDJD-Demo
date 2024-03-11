@@ -25,8 +25,11 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 	
 	if is_on_wall():
+		print("I Found a Wall!")
 		direction.x = - direction.x
 		$Sprite2D.flip_h = !$Sprite2D.flip_h
+	else:
+		print("No Walls!")
 
 	velocity.x = direction.x * SPEED
 

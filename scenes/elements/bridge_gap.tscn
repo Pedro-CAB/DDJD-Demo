@@ -1,21 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://7h7d81uo2tan"]
+[gd_scene load_steps=4 format=3 uid="uid://7h7d81uo2tan"]
+
+[ext_resource type="Script" path="res://scenes/elements/bridge_gap.gd" id="1_63g41"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rgxfc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yjuix"]
 
 [node name="Bridge Gap" type="Node2D"]
-position = Vector2(-21, 0)
+script = ExtResource("1_63g41")
 
 [node name="Left Cliff" type="Area2D" parent="."]
+position = Vector2(-20, 0)
+scale = Vector2(0.1, 1)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Left Cliff"]
 shape = SubResource("RectangleShape2D_rgxfc")
 
 [node name="Right Cliff" type="Area2D" parent="."]
+position = Vector2(20, 0)
+scale = Vector2(0.1, 1)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Right Cliff"]
-position = Vector2(41, 0)
 shape = SubResource("RectangleShape2D_yjuix")
+
+[connection signal="body_entered" from="Left Cliff" to="." method="_on_left_cliff_body_entered"]
+[connection signal="body_entered" from="Right Cliff" to="." method="_on_right_cliff_body_entered"]
