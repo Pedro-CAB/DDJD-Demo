@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://nyykr700jumb" path="res://graphics/3241111.png" id="8_3m482"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iucpt"]
-radius = 4.53403
+radius = 1.5
 height = 15.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6f0an"]
@@ -18,17 +18,18 @@ size = Vector2(12.4261, 16.3044)
 [node name="Student" type="CharacterBody2D"]
 scale = Vector2(1.44856, 1.53333)
 collision_mask = 2
+input_pickable = true
 script = ExtResource("1_uspsx")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.6459e-07, -0.978263)
-scale = Vector2(0.913546, -0.985201)
-shape = SubResource("CapsuleShape2D_iucpt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -0.652175)
 scale = Vector2(0.0337168, 0.0329346)
 texture = ExtResource("3_mopjn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.6459e-07, -0.978263)
+scale = Vector2(0.913546, -0.985201)
+shape = SubResource("CapsuleShape2D_iucpt")
 
 [node name="Clickable Area" type="Area2D" parent="."]
 collision_mask = 0
@@ -38,8 +39,6 @@ position = Vector2(4.52623e-07, -0.978263)
 shape = SubResource("RectangleShape2D_6f0an")
 
 [node name="Stop Timer" type="Timer" parent="."]
-
-[node name="Turn Timer" type="Timer" parent="."]
 
 [node name="Action Icons" type="Node2D" parent="."]
 

@@ -14,13 +14,16 @@ var state = Effects.None #by default, the student has no effects applied
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var prev_direction : Vector2 #to save direction before stopping
 var direction : Vector2
+var last_direction : Vector2
 
 func _ready():
 	direction = Vector2.RIGHT
+	last_direction = direction
 	$".".floor_max_angle = 1.3
 	clear_role()
 
 func clear_role():
+	direction = last_direction
 	for child in $"Action Icons".get_children():
 		child.visible = false
 
@@ -33,6 +36,9 @@ func _process(_delta):
 		$"Action Icons/Ruler".visible = true
 	if ($".".state == Effects.Slides):
 		$"Action Icons/Slides".visible = true
+		direction = Vector2.ZERO
+		set_collision_layer_value(2,true)
+		set_collision_mask_value(1, true)
 	if ($".".state == Effects.Study):
 		$"Action Icons/Study".visible = true
 	if ($".".state == Effects.None or $".".state == Effects.CLear):
@@ -44,9 +50,10 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	
-	if is_on_wall():
+	if is_on_wall() && state != Effects.Slides:
 		direction.x = - direction.x
 		$Sprite2D.flip_h = !$Sprite2D.flip_h
+		last_direction = direction
 
 	velocity.x = direction.x * SPEED
 

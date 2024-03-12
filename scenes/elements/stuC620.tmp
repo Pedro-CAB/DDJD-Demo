@@ -15,12 +15,14 @@ height = 15.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6f0an"]
 size = Vector2(12.4261, 16.3044)
 
-[node name="Student" type="CharacterBody2D"]
+[node name="Student" type="Node2D"]
 scale = Vector2(1.44856, 1.53333)
-collision_mask = 2
 script = ExtResource("1_uspsx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(-1.6459e-07, -0.978263)
 scale = Vector2(0.913546, -0.985201)
 shape = SubResource("CapsuleShape2D_iucpt")
