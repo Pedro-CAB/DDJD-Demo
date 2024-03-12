@@ -107,9 +107,7 @@ func _on_shortcut_entrance_body_entered(body):
 
 
 func _on_calculator_detection_body_entered(body):
-	print("STAIRWAY")
 	if (body.state == Effects.Calculator):
-		print("CALCULATED")
 		$Stairways/Stairway2.visible = true
 		$Stairways/Stairway2.set_collision_layer_value(2,true)
 		$Stairways/Stairway2.set_collision_mask_value(1,true)

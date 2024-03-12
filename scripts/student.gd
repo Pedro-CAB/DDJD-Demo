@@ -6,7 +6,7 @@ signal is_not_hovered(node)
 
 var paused = false
 
-const SPEED = 100.0 #Standard Speed
+const SPEED = 50.0 #Standard Speed
 #const SPEED = 100.0 #For testing purposes
 
 enum Effects {Calculator, Monitor, Ruler, Slides, Study, CLear, None}
@@ -51,10 +51,14 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor() && not paused:
 		velocity.y += gravity * delta
+		$AnimatedSprite2D.play("Falling")
+	else:
+		$AnimatedSprite2D.play("Running")
 	
 	if is_on_wall() && state != Effects.Slides && not paused:
 		direction.x = - direction.x
 		$Sprite2D.flip_h = !$Sprite2D.flip_h
+		$AnimatedSprite2D.flip_h = !$AnimatedSprite2D.flip_h
 		last_direction = direction
 
 	if not paused:
