@@ -17,7 +17,6 @@ func _ready():
 	$"Entrance and Exit/Level Entrance".student_amount = 20
 	
 func _process(_delta):
-	print(students_survived)
 	if Input.is_action_pressed("Move Camera Left"):
 		if $Camera2D.position.x - camera_speed > 576:
 			$Camera2D.position.x = $Camera2D.position.x - camera_speed
@@ -84,3 +83,20 @@ func _on_shortcut_entrance_body_entered(body):
 		body.global_position = $"One-Way Shortcut/Shortcut Exit".global_position
 		shortcut_limit -= 1
 		$"One-Way Shortcut/Counter".text = str(shortcut_limit)
+
+
+func _on_calculator_detection_body_entered(body):
+	print("STAIRWAY")
+	if (body.state == Effects.Calculator):
+		print("CALCULATED")
+		$Stairways/Stairway2.visible = true
+		$Stairways/Stairway2.set_collision_layer_value(2,true)
+		$Stairways/Stairway2.set_collision_mask_value(1,true)
+		body.state = Effects.None
+
+func _on_calculator_detection_2_body_entered(body):
+	if (body.state == Effects.Calculator):
+		$Stairways/Stairway.visible = true
+		$Stairways/Stairway.set_collision_layer_value(2,true)
+		$Stairways/Stairway.set_collision_mask_value(1,true)
+		body.state = Effects.None
