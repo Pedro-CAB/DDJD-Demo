@@ -77,14 +77,6 @@ scale = Vector2(3.60346, 3.60748)
 
 [node name="GUI" type="Node2D" parent="."]
 
-[node name="Pause Menu" parent="GUI" instance=ExtResource("5_crd4d")]
-visible = false
-offset_left = 580.0
-offset_top = 192.0
-offset_right = 580.0
-offset_bottom = 192.0
-scale = Vector2(2.07243, 2.01889)
-
 [node name="Action Assigner" parent="GUI" instance=ExtResource("2_1ua4q")]
 position = Vector2(13, 237)
 scale = Vector2(0.889571, 1.5)
@@ -101,6 +93,14 @@ text = "20 Alive
 00 Exited"
 label_settings = SubResource("LabelSettings_or7sw")
 horizontal_alignment = 2
+
+[node name="Pause Menu" parent="GUI/CanvasLayer" instance=ExtResource("5_crd4d")]
+visible = false
+offset_left = 580.0
+offset_top = 192.0
+offset_right = 580.0
+offset_bottom = 192.0
+scale = Vector2(2.07243, 2.01889)
 
 [node name="Piles of Paper" type="Node2D" parent="."]
 
@@ -220,9 +220,9 @@ shape = SubResource("RectangleShape2D_wpw2p")
 [connection signal="spawn_student" from="Entrance and Exit/Level Entrance" to="." method="_on_level_entrance_spawn_student"]
 [connection signal="student_arrived_despawner" from="Entrance and Exit/Level Exit" to="." method="_on_level_exit_student_arrived_despawner"]
 [connection signal="student_arrived_exit" from="Entrance and Exit/Level Exit" to="." method="_on_level_exit_student_arrived_exit"]
-[connection signal="back_to_menu" from="GUI/Pause Menu" to="." method="_on_pause_menu_back_to_menu"]
-[connection signal="restart_game" from="GUI/Pause Menu" to="." method="_on_pause_menu_restart_game"]
-[connection signal="resume_game" from="GUI/Pause Menu" to="." method="_on_pause_menu_resume_game"]
+[connection signal="back_to_menu" from="GUI/CanvasLayer/Pause Menu" to="." method="_on_pause_menu_back_to_menu"]
+[connection signal="restart_game" from="GUI/CanvasLayer/Pause Menu" to="." method="_on_pause_menu_restart_game"]
+[connection signal="resume_game" from="GUI/CanvasLayer/Pause Menu" to="." method="_on_pause_menu_resume_game"]
 [connection signal="study_found_paper" from="Piles of Paper/Pile of Paper" to="." method="_on_pile_of_paper_study_found_paper"]
 [connection signal="study_found_paper" from="Piles of Paper/Pile of Paper2" to="." method="_on_pile_of_paper_study_found_paper"]
 [connection signal="study_found_paper" from="Piles of Paper/Pile of Paper3" to="." method="_on_pile_of_paper_study_found_paper"]

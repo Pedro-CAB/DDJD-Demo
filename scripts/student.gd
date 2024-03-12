@@ -41,6 +41,7 @@ func _process(_delta):
 		direction = Vector2.ZERO
 		set_collision_layer_value(2,true)
 		set_collision_mask_value(1, true)
+		$AnimatedSprite2D.play("Idle")
 	if ($".".state == Effects.Study):
 		$"Action Icons/Study".visible = true
 	if ($".".state == Effects.None or $".".state == Effects.CLear):
@@ -51,10 +52,14 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor() && not paused:
 		velocity.y += gravity * delta
+		$AnimatedSprite2D.play("Falling")
+	else:
+		$AnimatedSprite2D.play("Running")
 	
 	if is_on_wall() && state != Effects.Slides && not paused:
 		direction.x = - direction.x
 		$Sprite2D.flip_h = !$Sprite2D.flip_h
+		$AnimatedSprite2D.flip_h = !$AnimatedSprite2D.flip_h
 		last_direction = direction
 
 	if not paused:

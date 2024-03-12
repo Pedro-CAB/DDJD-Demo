@@ -73,6 +73,7 @@ label_settings = SubResource("LabelSettings_cktxo")
 horizontal_alignment = 3
 
 [node name="Calculator Description" type="Label" parent="How To Play"]
+layout_mode = 0
 offset_left = 65.1563
 offset_top = 157.645
 offset_right = 221.156
@@ -88,6 +89,7 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("4_h7a2h")
 
 [node name="Ruler Description" type="Label" parent="How To Play"]
+layout_mode = 0
 offset_left = 266.283
 offset_top = 158.836
 offset_right = 427.283
@@ -103,6 +105,7 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("5_hcass")
 
 [node name="Slides Description" type="Label" parent="How To Play"]
+layout_mode = 0
 offset_left = 62.734
 offset_top = 225.453
 offset_right = 223.734
@@ -118,6 +121,7 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("6_jwifm")
 
 [node name="Study Description" type="Label" parent="How To Play"]
+layout_mode = 0
 offset_left = 267.659
 offset_top = 225.453
 offset_right = 428.659
@@ -133,6 +137,7 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("7_ggnue")
 
 [node name="Clear Description" type="Label" parent="How To Play"]
+layout_mode = 0
 offset_left = 129.969
 offset_top = 293.662
 offset_right = 290.969
