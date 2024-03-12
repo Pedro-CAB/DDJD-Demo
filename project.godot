@@ -11,8 +11,12 @@ config_version=5
 [application]
 
 config/name="Path of Excelence"
-run/main_scene="res://scenes/test/movement.tscn"
+run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [input]
 

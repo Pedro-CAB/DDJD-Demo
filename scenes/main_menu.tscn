@@ -1,0 +1,162 @@
+[gd_scene load_steps=10 format=3 uid="uid://c0fus5jhbnbed"]
+
+[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_grgje"]
+[ext_resource type="Texture2D" uid="uid://bmk7xsnhiiv05" path="res://graphics/182a97a789157e9217d619b60790dcb8.jpg" id="1_jcls3"]
+[ext_resource type="Texture2D" uid="uid://dib2pqfovsy2a" path="res://graphics/Logo.png" id="2_5spj3"]
+[ext_resource type="Texture2D" uid="uid://bpwkk31s6p5l" path="res://graphics/calculator icon.png" id="4_h7a2h"]
+[ext_resource type="Texture2D" uid="uid://c6qcwjjpnrs4v" path="res://graphics/ruler icon.png" id="5_hcass"]
+[ext_resource type="Texture2D" uid="uid://b487mvhfx7wxy" path="res://graphics/Presentation_icon_BLACK-01.png" id="6_jwifm"]
+[ext_resource type="Texture2D" uid="uid://nyykr700jumb" path="res://graphics/3241111.png" id="7_ggnue"]
+[ext_resource type="Texture2D" uid="uid://4slw57gqmb38" path="res://graphics/2954888.png" id="8_cpcf2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cktxo"]
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_grgje")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(580, 324)
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(581, 325)
+scale = Vector2(1.89069, 1.66904)
+texture = ExtResource("1_jcls3")
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(575.6, 184.2)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_5spj3")
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 441.6
+offset_top = 368.2
+offset_right = 541.6
+offset_bottom = 469.2
+scale = Vector2(2.73619, 2.48238)
+
+[node name="Start Button" type="Button" parent="Buttons"]
+layout_mode = 2
+text = "Start"
+
+[node name="How To Play Button" type="Button" parent="Buttons"]
+layout_mode = 2
+text = "How to Play"
+
+[node name="Quit Button" type="Button" parent="Buttons"]
+layout_mode = 2
+text = "Quit"
+
+[node name="How To Play" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 284.0
+offset_top = 30.0
+offset_right = 692.0
+offset_bottom = 157.0
+scale = Vector2(1.45419, 1.47108)
+text = "Your objective is to  guide students
+ towards the exit of the level without dying.
+For that, you'll have a limited amount of
+Effects to choose from. Use the WASD or arrow keys
+to move the camera and the mouse to assign Effects
+to students."
+label_settings = SubResource("LabelSettings_cktxo")
+horizontal_alignment = 3
+
+[node name="Calculator Description" type="Label" parent="How To Play"]
+offset_left = 65.1563
+offset_top = 157.645
+offset_right = 221.156
+offset_bottom = 214.645
+scale = Vector2(0.915408, 1.06534)
+text = "Build stairs to
+surpass deadly cliffs"
+label_settings = SubResource("LabelSettings_cktxo")
+
+[node name="Calculator Icon" type="Sprite2D" parent="How To Play"]
+position = Vector2(33.1643, 181.948)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_h7a2h")
+
+[node name="Ruler Description" type="Label" parent="How To Play"]
+offset_left = 266.283
+offset_top = 158.836
+offset_right = 427.283
+offset_bottom = 215.836
+scale = Vector2(0.915408, 1.06534)
+text = "Build bridges to
+surpass deadly holes"
+label_settings = SubResource("LabelSettings_cktxo")
+
+[node name="Ruler Icon" type="Sprite2D" parent="How To Play"]
+position = Vector2(232.588, 184.667)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_hcass")
+
+[node name="Slides Description" type="Label" parent="How To Play"]
+offset_left = 62.734
+offset_top = 225.453
+offset_right = 223.734
+offset_bottom = 282.453
+scale = Vector2(0.915408, 1.06534)
+text = "Blocks path for 
+other students"
+label_settings = SubResource("LabelSettings_cktxo")
+
+[node name="Slides Icon" type="Sprite2D" parent="How To Play"]
+position = Vector2(34.5396, 254.004)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_jwifm")
+
+[node name="Study Description" type="Label" parent="How To Play"]
+offset_left = 267.659
+offset_top = 225.453
+offset_right = 428.659
+offset_bottom = 282.453
+scale = Vector2(0.915408, 1.06534)
+text = "Removes a Pile of
+Books"
+label_settings = SubResource("LabelSettings_cktxo")
+
+[node name="Study Icon" type="Sprite2D" parent="How To Play"]
+position = Vector2(232.588, 252.644)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_ggnue")
+
+[node name="Clear Description" type="Label" parent="How To Play"]
+offset_left = 129.969
+offset_top = 293.662
+offset_right = 290.969
+offset_bottom = 350.662
+scale = Vector2(0.915408, 1.06534)
+text = "Removes current
+Effect from student"
+label_settings = SubResource("LabelSettings_cktxo")
+
+[node name="Clear Icon" type="Sprite2D" parent="How To Play"]
+position = Vector2(92.3036, 317.902)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("8_cpcf2")
+
+[node name="Back Button" type="Button" parent="How To Play"]
+layout_mode = 2
+offset_left = 110.027
+offset_top = 348.724
+offset_right = 210.027
+offset_bottom = 379.724
+scale = Vector2(1.86876, 1.59696)
+text = "Back"
+
+[connection signal="pressed" from="Buttons/Start Button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Buttons/How To Play Button" to="." method="_on_how_to_play_button_pressed"]
+[connection signal="pressed" from="Buttons/Quit Button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="How To Play/Back Button" to="." method="_on_back_button_pressed"]
