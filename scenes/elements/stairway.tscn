@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://yh1et03acw0u"]
+
+[ext_resource type="Texture2D" uid="uid://bcr0lmrfcammx" path="res://graphics/1_NDqARxUbm2VxM27OrZA33Q-removebg-preview.png" id="1_khmo1"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8l038"]
+
+[node name="Stairway" type="StaticBody2D"]
+collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_8l038")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-64, 58, 86, 59, -64, -67)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.3)
+texture = ExtResource("1_khmo1")

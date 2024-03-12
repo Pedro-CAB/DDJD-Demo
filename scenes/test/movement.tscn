@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://26wmnutay2hs"]
+[gd_scene load_steps=13 format=3 uid="uid://26wmnutay2hs"]
 
 [ext_resource type="Script" path="res://scenes/test/movement.gd" id="1_gx1tk"]
 [ext_resource type="PackedScene" uid="uid://bjxihc0qyyllu" path="res://tilemaps/sky_and_soil.tscn" id="1_pbksg"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cyltucxvl72v7" path="res://scenes/elements/shortcut_entrance.tscn" id="9_3di23"]
 [ext_resource type="PackedScene" uid="uid://qimq2syl7m1w" path="res://scenes/elements/shortcut_exit.tscn" id="9_pts5g"]
 [ext_resource type="PackedScene" uid="uid://7h7d81uo2tan" path="res://scenes/elements/bridge_gap.tscn" id="10_fk6m4"]
+[ext_resource type="PackedScene" uid="uid://yh1et03acw0u" path="res://scenes/elements/stairway.tscn" id="11_hhyip"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f87r2"]
 absorbent = true
@@ -83,7 +84,7 @@ position = Vector2(2231, 230)
 scale = Vector2(0.15315, 0.220197)
 
 [node name="Pile of Paper3" parent="Piles of Paper" instance=ExtResource("5_22yoa")]
-position = Vector2(796, 759)
+position = Vector2(1189, 567)
 scale = Vector2(0.15315, 0.220197)
 
 [node name="Pile of Paper4" parent="Piles of Paper" instance=ExtResource("5_22yoa")]
@@ -136,7 +137,17 @@ position = Vector2(1465, 672)
 scale = Vector2(4.7299, -1.49069)
 
 [node name="Spawned Students" type="Node2D" parent="."]
-position = Vector2(114, 200)
+position = Vector2(-50, 198)
+
+[node name="Stairways" type="Node2D" parent="."]
+
+[node name="Stairway" parent="Stairways" instance=ExtResource("11_hhyip")]
+position = Vector2(1487, 841)
+scale = Vector2(1.5, 1.5)
+
+[node name="Stairway2" parent="Stairways" instance=ExtResource("11_hhyip")]
+position = Vector2(910, 688)
+scale = Vector2(-1.5, 1.6)
 
 [connection signal="spawn_student" from="Entrance and Exit/Level Entrance" to="." method="_on_level_entrance_spawn_student"]
 [connection signal="student_arrived_despawner" from="Entrance and Exit/Level Exit" to="." method="_on_level_exit_student_arrived_despawner"]
