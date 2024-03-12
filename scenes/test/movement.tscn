@@ -60,7 +60,7 @@ position = Vector2(0, -294)
 collision_layer = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions/Platform 5"]
-polygon = PackedVector2Array(1755, 187, 1944, 187, 1947, 268, 1753, 268)
+polygon = PackedVector2Array(1755, 187, 1945, 188, 1945, 266, 1753, 268)
 
 [node name="Tiles" parent="." instance=ExtResource("1_pbksg")]
 position = Vector2(-1, 0)

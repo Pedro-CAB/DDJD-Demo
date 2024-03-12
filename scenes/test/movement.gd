@@ -14,10 +14,6 @@ var students_survived = 0
 
 # How many students can traverse the shortcut before it closes?
 var shortcut_limit = 10
-
-func _ready():
-	# How Many Students Should Spawn?
-	$"Entrance and Exit/Level Entrance".student_amount = 20
 	
 func _process(_delta):
 	if Input.is_action_just_pressed("Pause and Unpause") or pause_updated:

@@ -58,7 +58,6 @@ func _physics_process(delta):
 	
 	if is_on_wall() && state != Effects.Slides && not paused:
 		direction.x = - direction.x
-		$Sprite2D.flip_h = !$Sprite2D.flip_h
 		$AnimatedSprite2D.flip_h = !$AnimatedSprite2D.flip_h
 		last_direction = direction
 
