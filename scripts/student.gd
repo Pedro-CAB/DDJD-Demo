@@ -18,6 +18,25 @@ var direction : Vector2
 func _ready():
 	direction = Vector2.RIGHT
 	$".".floor_max_angle = 1.3
+	clear_role()
+
+func clear_role():
+	for child in $"Action Icons".get_children():
+		child.visible = false
+
+func _process(_delta):
+	if ($".".state == Effects.Calculator):
+		$"Action Icons/Calculator".visible = true
+	if ($".".state == Effects.Monitor):
+		$"Action Icons/Monitor".visible = true
+	if ($".".state == Effects.Ruler):
+		$"Action Icons/Ruler".visible = true
+	if ($".".state == Effects.Slides):
+		$"Action Icons/Slides".visible = true
+	if ($".".state == Effects.Study):
+		$"Action Icons/Study".visible = true
+	if ($".".state == Effects.None or $".".state == Effects.CLear):
+		clear_role()
 
 
 func _physics_process(delta):
