@@ -14,3 +14,9 @@ func _on_spawn_timer_timeout():
 	if (student_amount > 0):
 		spawn_student.emit()
 	count -= 1
+	
+func pause():
+	$SpawnTimer.paused = true
+
+func unpause():
+	$SpawnTimer.paused = false

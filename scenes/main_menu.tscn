@@ -68,7 +68,7 @@ text = "Your objective is to  guide students
 For that, you'll have a limited amount of
 Effects to choose from. Use the WASD or arrow keys
 to move the camera and the mouse to assign Effects
-to students."
+to students. Press Space to pause."
 label_settings = SubResource("LabelSettings_cktxo")
 horizontal_alignment = 3
 

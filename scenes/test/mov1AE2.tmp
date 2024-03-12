@@ -220,8 +220,6 @@ shape = SubResource("RectangleShape2D_wpw2p")
 [connection signal="spawn_student" from="Entrance and Exit/Level Entrance" to="." method="_on_level_entrance_spawn_student"]
 [connection signal="student_arrived_despawner" from="Entrance and Exit/Level Exit" to="." method="_on_level_exit_student_arrived_despawner"]
 [connection signal="student_arrived_exit" from="Entrance and Exit/Level Exit" to="." method="_on_level_exit_student_arrived_exit"]
-[connection signal="back_to_menu" from="GUI/Pause Menu" to="." method="_on_pause_menu_back_to_menu"]
-[connection signal="restart_game" from="GUI/Pause Menu" to="." method="_on_pause_menu_restart_game"]
 [connection signal="resume_game" from="GUI/Pause Menu" to="." method="_on_pause_menu_resume_game"]
 [connection signal="study_found_paper" from="Piles of Paper/Pile of Paper" to="." method="_on_pile_of_paper_study_found_paper"]
 [connection signal="study_found_paper" from="Piles of Paper/Pile of Paper2" to="." method="_on_pile_of_paper_study_found_paper"]

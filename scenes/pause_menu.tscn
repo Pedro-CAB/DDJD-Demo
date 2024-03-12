@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://ct3001ysqavbo"]
+
+[ext_resource type="Script" path="res://Pause Menu.gd" id="1_8vh2r"]
+[ext_resource type="Texture2D" uid="uid://c40b07orvuk51" path="res://graphics/480px-Eo_circle_red_pause.svg.png" id="2_60jal"]
+
+[node name="Pause Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8vh2r")
+
+[node name="Pause" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_60jal")
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -75.0
+offset_top = 61.0
+offset_right = 45.0
+offset_bottom = 162.0
+scale = Vector2(1.27984, 1.35374)
+
+[node name="Resume Button" type="Button" parent="Buttons"]
+layout_mode = 2
+text = "Resume Game"
+
+[node name="Restart Button" type="Button" parent="Buttons"]
+layout_mode = 2
+text = "Restart Game"
+
+[node name="Menu Button" type="Button" parent="Buttons"]
+layout_mode = 2
+text = "Back to Menu"
+
+[connection signal="pressed" from="Buttons/Resume Button" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Buttons/Restart Button" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="Buttons/Menu Button" to="." method="_on_menu_button_pressed"]

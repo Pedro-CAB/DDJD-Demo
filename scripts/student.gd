@@ -4,6 +4,8 @@ signal is_clicked(node)
 signal is_hovered(node)
 signal is_not_hovered(node)
 
+var paused = false
+
 const SPEED = 100.0 #Standard Speed
 #const SPEED = 100.0 #For testing purposes
 
@@ -47,17 +49,26 @@ func _process(_delta):
 
 func _physics_process(delta):
 	# Add the gravity.
-	if not is_on_floor():
+	if not is_on_floor() && not paused:
 		velocity.y += gravity * delta
 	
-	if is_on_wall() && state != Effects.Slides:
+	if is_on_wall() && state != Effects.Slides && not paused:
 		direction.x = - direction.x
 		$Sprite2D.flip_h = !$Sprite2D.flip_h
 		last_direction = direction
 
-	velocity.x = direction.x * SPEED
+	if not paused:
+		velocity.x = direction.x * SPEED
+		move_and_slide()
+	
+func pause():
+	last_direction = direction
+	direction = Vector2.ZERO
+	paused = true
 
-	move_and_slide()
+func unpause():
+	direction = last_direction
+	paused = false
 
 # Stop Student Movement for time seconds
 func temporary_stop(time):

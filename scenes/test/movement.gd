@@ -6,6 +6,9 @@ var student_scene = preload("res://scenes/elements/student.tscn")
 
 const camera_speed = 10
 
+var is_paused = false
+var pause_updated = false
+
 # How many reached the exit?
 var students_survived = 0
 
@@ -17,6 +20,24 @@ func _ready():
 	$"Entrance and Exit/Level Entrance".student_amount = 20
 	
 func _process(_delta):
+	if Input.is_action_just_pressed("Pause and Unpause") or pause_updated:
+		pause_updated = false
+		if is_paused:
+			print("Unpause!")
+			$"Entrance and Exit/Level Entrance".unpause()
+			for s in $"Spawned Students".get_children():
+				s.unpause()
+				$"GUI/Pause Menu".visible = false
+				$"GUI/Action Assigner/CanvasLayer".visible = true
+				is_paused = false
+		else:
+			print("Pause!")
+			$"Entrance and Exit/Level Entrance".pause()
+			for s in $"Spawned Students".get_children():
+				s.pause()
+				$"GUI/Pause Menu".visible = true
+				$"GUI/Action Assigner/CanvasLayer".visible = false
+				is_paused = true
 	if Input.is_action_pressed("Move Camera Left"):
 		if $Camera2D.position.x - camera_speed > 576:
 			$Camera2D.position.x = $Camera2D.position.x - camera_speed
@@ -100,3 +121,15 @@ func _on_calculator_detection_2_body_entered(body):
 		$Stairways/Stairway.set_collision_layer_value(2,true)
 		$Stairways/Stairway.set_collision_mask_value(1,true)
 		body.state = Effects.None
+
+
+func _on_pause_menu_resume_game():
+	pause_updated = true
+
+
+func _on_pause_menu_restart_game():
+	get_tree().change_scene_to_file("res://scenes/test/movement.tscn")
+
+
+func _on_pause_menu_back_to_menu():
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
