@@ -37,7 +37,7 @@ polygon = PackedVector2Array(-407, -106, -118, -106, -119, 39, 121, 39, 121, 135
 collision_layer = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions/Platform 2"]
-polygon = PackedVector2Array(504, -362, 504, 40, 264, 40, 262, 118, 360, 118, 360, 166, 598, 166, 602, 118, 1754, 118, 1752, 40, 1560, 40, 1562, -170, 1750, -170, 1754, -250, 1082, -250, 1082, 26, 936, 26, 938, -250, 552, -248, 550, -364)
+polygon = PackedVector2Array(504, -362, 504, 40, 264, 40, 262, 118, 360, 118, 360, 166, 598, 166, 602, 118, 1754, 118, 1752, 40, 1560, 40, 1562, -170, 1754, -170, 1753, -249, 1081, -248, 1082, 26, 936, 26, 937, -249, 552, -248, 550, -364)
 
 [node name="Platform 3" type="StaticBody2D" parent="Collisions"]
 collision_layer = 2
