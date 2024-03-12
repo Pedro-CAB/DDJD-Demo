@@ -1,8 +1,7 @@
-[gd_scene load_steps=27 format=3 uid="uid://bg6gttrox42w6"]
+[gd_scene load_steps=26 format=3 uid="uid://bg6gttrox42w6"]
 
 [ext_resource type="Script" path="res://scripts/student.gd" id="1_uspsx"]
 [ext_resource type="Texture2D" uid="uid://n53ambex1m75" path="res://graphics/JumpPack_CharacterSpriteSheet.png" id="2_0g64k"]
-[ext_resource type="Texture2D" uid="uid://cmm7duy2vkskf" path="res://graphics/running.png" id="3_mopjn"]
 [ext_resource type="Texture2D" uid="uid://bpwkk31s6p5l" path="res://graphics/calculator icon.png" id="4_swkc1"]
 [ext_resource type="Texture2D" uid="uid://dlk8rcmsu8ek4" path="res://graphics/monitor icon.png" id="5_logh1"]
 [ext_resource type="Texture2D" uid="uid://c6qcwjjpnrs4v" path="res://graphics/ruler icon.png" id="6_ekf46"]
@@ -152,19 +151,13 @@ script = ExtResource("1_uspsx")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_r8y1e")
-animation = &"Running"
-frame_progress = 0.0305771
+animation = &"Idle"
+frame_progress = 0.694159
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.6459e-07, -0.978263)
 scale = Vector2(0.913546, -0.985201)
 shape = SubResource("CapsuleShape2D_iucpt")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(0, -0.652175)
-scale = Vector2(0.0337168, 0.0329346)
-texture = ExtResource("3_mopjn")
 
 [node name="Clickable Area" type="Area2D" parent="."]
 collision_mask = 0

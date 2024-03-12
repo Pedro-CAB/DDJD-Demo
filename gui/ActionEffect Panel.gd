@@ -8,7 +8,6 @@ signal study_selected()
 signal clear_selected()
 
 var calculator_amount = 3
-var monitor_amount = 3
 var ruler_amount = 3
 var slides_amount = 3
 var study_amount = 3
@@ -19,13 +18,6 @@ func _on_calculator_button_pressed():
 		calculator_selected.emit()
 		calculator_amount -= 1
 		$"Amounts/Calculator".text = str(calculator_amount)
-
-
-func _on_monitor_button_pressed():
-	if monitor_amount > 0:
-		monitor_selected.emit()
-		monitor_amount -= 1
-		$"Amounts/Monitor".text = str(monitor_amount)
 
 
 func _on_ruler_button_pressed():

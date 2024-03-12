@@ -7,9 +7,6 @@ var state = Effects.None #the effect that is currently selected to be assigned t
 func _on_action_effect_panel_calculator_selected():
 	state = Effects.Calculator
 
-func _on_action_effect_panel_monitor_selected():
-	state = Effects.Monitor
-
 func _on_action_effect_panel_ruler_selected():
 	state = Effects.Ruler
 

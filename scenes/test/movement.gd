@@ -23,31 +23,29 @@ func _process(_delta):
 	if Input.is_action_just_pressed("Pause and Unpause") or pause_updated:
 		pause_updated = false
 		if is_paused:
-			print("Unpause!")
 			$"Entrance and Exit/Level Entrance".unpause()
 			for s in $"Spawned Students".get_children():
 				s.unpause()
-				$"GUI/Pause Menu".visible = false
+				$"GUI/CanvasLayer/Pause Menu".visible = false
 				$"GUI/Action Assigner/CanvasLayer".visible = true
 				is_paused = false
 		else:
-			print("Pause!")
 			$"Entrance and Exit/Level Entrance".pause()
 			for s in $"Spawned Students".get_children():
 				s.pause()
-				$"GUI/Pause Menu".visible = true
+				$"GUI/CanvasLayer/Pause Menu".visible = true
 				$"GUI/Action Assigner/CanvasLayer".visible = false
 				is_paused = true
-	if Input.is_action_pressed("Move Camera Left"):
+	if Input.is_action_pressed("Move Camera Left") && not is_paused:
 		if $Camera2D.position.x - camera_speed > 576:
 			$Camera2D.position.x = $Camera2D.position.x - camera_speed
-	elif Input.is_action_pressed("Move Camera Right"):
+	elif Input.is_action_pressed("Move Camera Right") && not is_paused:
 		if $Camera2D.position.x + camera_speed < 1728:
 			$Camera2D.position.x = $Camera2D.position.x + camera_speed
-	if Input.is_action_pressed("Move Camera Up"):
+	if Input.is_action_pressed("Move Camera Up") && not is_paused:
 		if $Camera2D.position.y - camera_speed > 322:
 			$Camera2D.position.y = $Camera2D.position.y - camera_speed
-	elif Input.is_action_pressed("Move Camera Down"):
+	elif Input.is_action_pressed("Move Camera Down") && not is_paused:
 		if $Camera2D.position.y + camera_speed < 831:
 			$Camera2D.position.y = $Camera2D.position.y + camera_speed
 	if shortcut_limit == 0 && $"One-Way Shortcut" != null:

@@ -6,7 +6,7 @@ signal is_not_hovered(node)
 
 var paused = false
 
-const SPEED = 50.0 #Standard Speed
+const SPEED = 100.0 #Standard Speed
 #const SPEED = 100.0 #For testing purposes
 
 enum Effects {Calculator, Monitor, Ruler, Slides, Study, CLear, None}
@@ -41,6 +41,7 @@ func _process(_delta):
 		direction = Vector2.ZERO
 		set_collision_layer_value(2,true)
 		set_collision_mask_value(1, true)
+		$AnimatedSprite2D.play("Idle")
 	if ($".".state == Effects.Study):
 		$"Action Icons/Study".visible = true
 	if ($".".state == Effects.None or $".".state == Effects.CLear):

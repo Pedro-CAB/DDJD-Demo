@@ -16,10 +16,10 @@ anchor_left = 0.0
 anchor_top = 0.861
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1640.0
-offset_top = 3902.07
-offset_right = 1634.0
-offset_bottom = 3908.0
+offset_left = 2590.0
+offset_top = 3952.07
+offset_right = 2584.0
+offset_bottom = 3958.0
 
 [connection signal="calculator_selected" from="CanvasLayer/ActionEffect Panel" to="." method="_on_action_effect_panel_calculator_selected"]
 [connection signal="clear_selected" from="CanvasLayer/ActionEffect Panel" to="." method="_on_action_effect_panel_clear_selected"]

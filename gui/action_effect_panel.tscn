@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://h84qg1mbpfq2"]
+[gd_scene load_steps=7 format=3 uid="uid://h84qg1mbpfq2"]
 
 [ext_resource type="Script" path="res://gui/ActionEffect Panel.gd" id="1_h1ddw"]
 [ext_resource type="Texture2D" uid="uid://bpwkk31s6p5l" path="res://graphics/calculator icon.png" id="2_ihkla"]
-[ext_resource type="Texture2D" uid="uid://dlk8rcmsu8ek4" path="res://graphics/monitor icon.png" id="3_ih5jv"]
 [ext_resource type="Texture2D" uid="uid://c6qcwjjpnrs4v" path="res://graphics/ruler icon.png" id="4_lcerj"]
 [ext_resource type="Texture2D" uid="uid://b487mvhfx7wxy" path="res://graphics/Presentation_icon_BLACK-01.png" id="5_5mi77"]
 [ext_resource type="Texture2D" uid="uid://nyykr700jumb" path="res://graphics/3241111.png" id="6_amena"]
@@ -37,10 +36,6 @@ layout_mode = 2
 icon = ExtResource("2_ihkla")
 icon_alignment = 1
 
-[node name="Monitor Button" type="Button" parent="Panel"]
-layout_mode = 2
-icon = ExtResource("3_ih5jv")
-
 [node name="Ruler Button" type="Button" parent="Panel"]
 layout_mode = 2
 icon = ExtResource("4_lcerj")
@@ -72,11 +67,6 @@ custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "3"
 
-[node name="Monitor" type="Label" parent="Amounts"]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-text = "3"
-
 [node name="Ruler" type="Label" parent="Amounts"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
@@ -98,7 +88,6 @@ layout_mode = 2
 text = "3"
 
 [connection signal="pressed" from="Panel/Calculator Button" to="." method="_on_calculator_button_pressed"]
-[connection signal="pressed" from="Panel/Monitor Button" to="." method="_on_monitor_button_pressed"]
 [connection signal="pressed" from="Panel/Ruler Button" to="." method="_on_ruler_button_pressed"]
 [connection signal="pressed" from="Panel/Slides Button" to="." method="_on_slides_button_pressed"]
 [connection signal="pressed" from="Panel/Study Button" to="." method="_on_study_button_pressed"]
