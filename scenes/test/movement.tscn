@@ -21,7 +21,7 @@ shadow_size = 10
 shadow_color = Color(0.45098, 0.243137, 0.109804, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wpw2p"]
-size = Vector2(32.9999, 21.6667)
+size = Vector2(36.591, 21.6667)
 
 [node name="Movement" type="Node2D"]
 script = ExtResource("1_gx1tk")
@@ -247,6 +247,26 @@ shape = SubResource("RectangleShape2D_wpw2p")
 position = Vector2(-536.667, -213.333)
 shape = SubResource("RectangleShape2D_wpw2p")
 
+[node name="Stairway3" parent="Stairways" instance=ExtResource("11_hhyip")]
+visible = false
+position = Vector2(259, 335)
+scale = Vector2(1.05218, 1.08926)
+collision_layer = 0
+collision_mask = 0
+
+[node name="Calculator Detection 3" type="Area2D" parent="Stairways/Stairway3"]
+position = Vector2(-840, 188.75)
+rotation = 3.14159
+scale = Vector2(1, -0.9375)
+
+[node name="Lower" type="CollisionShape2D" parent="Stairways/Stairway3/Calculator Detection 3"]
+position = Vector2(-964.029, -151.389)
+shape = SubResource("RectangleShape2D_wpw2p")
+
+[node name="Upper" type="CollisionShape2D" parent="Stairways/Stairway3/Calculator Detection 3"]
+position = Vector2(-756.603, -293.381)
+shape = SubResource("RectangleShape2D_wpw2p")
+
 [connection signal="spawn_student" from="Entrance and Exit/Level Entrance" to="." method="_on_level_entrance_spawn_student"]
 [connection signal="student_arrived_despawner" from="Entrance and Exit/Level Exit" to="." method="_on_level_exit_student_arrived_despawner"]
 [connection signal="student_arrived_exit" from="Entrance and Exit/Level Exit" to="." method="_on_level_exit_student_arrived_exit"]
@@ -260,3 +280,4 @@ shape = SubResource("RectangleShape2D_wpw2p")
 [connection signal="body_entered" from="One-Way Shortcut/Shortcut Entrance" to="." method="_on_shortcut_entrance_body_entered"]
 [connection signal="body_entered" from="Stairways/Stairway/Calculator Detection" to="." method="_on_calculator_detection_body_entered"]
 [connection signal="body_entered" from="Stairways/Stairway2/Calculator Detection 2" to="." method="_on_calculator_detection_2_body_entered"]
+[connection signal="body_entered" from="Stairways/Stairway3/Calculator Detection 3" to="." method="_on_calculator_detection_3_body_entered"]

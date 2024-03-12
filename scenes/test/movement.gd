@@ -114,6 +114,13 @@ func _on_calculator_detection_2_body_entered(body):
 		$Stairways/Stairway.set_collision_mask_value(1,true)
 		body.state = Effects.None
 
+func _on_calculator_detection_3_body_entered(body):
+	if (body.state == Effects.Calculator):
+		$Stairways/Stairway3.visible = true
+		$Stairways/Stairway3.set_collision_layer_value(2,true)
+		$Stairways/Stairway3.set_collision_mask_value(1,true)
+		body.state = Effects.None
+
 
 func _on_pause_menu_resume_game():
 	pause_updated = true
