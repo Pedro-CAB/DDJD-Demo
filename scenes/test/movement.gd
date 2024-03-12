@@ -8,7 +8,7 @@ const camera_speed = 10
 
 func _ready():
 	# How Many Students Should Spawn?
-	$"Entrance and Exit/Level Entrance".student_amount = 20
+	$"Entrance and Exit/Level Entrance".student_amount = 1
 	
 func _process(_delta):
 	if Input.is_action_pressed("Move Camera Left"):

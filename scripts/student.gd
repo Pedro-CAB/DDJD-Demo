@@ -4,7 +4,7 @@ signal is_clicked(node)
 signal is_hovered(node)
 signal is_not_hovered(node)
 
-const SPEED = 25.0 #Standard Speed
+const SPEED = 100.0 #Standard Speed
 #const SPEED = 100.0 #For testing purposes
 
 enum Effects {Calculator, Monitor, Ruler, Slides, Study, CLear, None}
@@ -17,6 +17,7 @@ var direction : Vector2
 
 func _ready():
 	direction = Vector2.RIGHT
+	$".".floor_max_angle = 1.3
 
 
 func _physics_process(delta):
@@ -25,11 +26,8 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 	
 	if is_on_wall():
-		print("I Found a Wall!")
 		direction.x = - direction.x
 		$Sprite2D.flip_h = !$Sprite2D.flip_h
-	else:
-		print("No Walls!")
 
 	velocity.x = direction.x * SPEED
 

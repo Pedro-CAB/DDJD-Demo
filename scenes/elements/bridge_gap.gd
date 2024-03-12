@@ -10,7 +10,7 @@ var bridge = preload("res://scenes/elements/bridge.tscn")
 func build_bridge(body):
 	if !is_built && body.state == Effects.Ruler:
 		var bridge_node = bridge.instantiate()
-		bridge_node.global_position.y = -15
+		bridge_node.global_position.y = -14.5
 		$".".add_child(bridge_node)
 		is_built = true
 		ruler_approaching.emit(body)

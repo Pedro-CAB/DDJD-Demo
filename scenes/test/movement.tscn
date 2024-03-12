@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://26wmnutay2hs"]
+[gd_scene load_steps=12 format=3 uid="uid://26wmnutay2hs"]
 
 [ext_resource type="Script" path="res://scenes/test/movement.gd" id="1_gx1tk"]
 [ext_resource type="PackedScene" uid="uid://bjxihc0qyyllu" path="res://tilemaps/sky_and_soil.tscn" id="1_pbksg"]
@@ -11,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://qimq2syl7m1w" path="res://scenes/elements/shortcut_exit.tscn" id="9_pts5g"]
 [ext_resource type="PackedScene" uid="uid://7h7d81uo2tan" path="res://scenes/elements/bridge_gap.tscn" id="10_fk6m4"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f87r2"]
+absorbent = true
+
 [node name="Movement" type="Node2D"]
 script = ExtResource("1_gx1tk")
 
@@ -19,10 +22,11 @@ position = Vector2(310, 361)
 
 [node name="Platform 1" type="StaticBody2D" parent="Collisions"]
 collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_f87r2")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions/Platform 1"]
 position = Vector2(-1, 0)
-polygon = PackedVector2Array(-407, -106, -119, -105, -119, 39, 120, 40, 121, 135, 168, 135, 169, 229, 311, 231, 313, 312, -119, 311, -117, 215, -311, 215, -310, 327, -215, 327, -213, 692, -21, 693, -21, 422, 699, 423, 698, 231, 937, 231, 938, 326, 1082, 326, 1083, 566, 2137, 566, 2143, 790, -407, 791)
+polygon = PackedVector2Array(-407, -106, -118, -106, -119, 39, 121, 39, 121, 135, 168, 135, 169, 229, 311, 231, 313, 312, -119, 311, -117, 215, -311, 215, -310, 327, -215, 327, -213, 692, -21, 693, -21, 422, 699, 423, 698, 231, 937, 231, 938, 326, 1082, 326, 1083, 566, 2137, 566, 2143, 790, -407, 791)
 
 [node name="Platform 2" type="StaticBody2D" parent="Collisions"]
 collision_layer = 2
@@ -71,7 +75,7 @@ scale = Vector2(0.889571, 1.5)
 [node name="Piles of Paper" type="Node2D" parent="."]
 
 [node name="Pile of Paper" parent="Piles of Paper" instance=ExtResource("5_22yoa")]
-position = Vector2(154, 233)
+position = Vector2(2223, 519)
 scale = Vector2(0.15315, 0.220197)
 
 [node name="Pile of Paper2" parent="Piles of Paper" instance=ExtResource("5_22yoa")]
@@ -124,7 +128,7 @@ position = Vector2(507, 383)
 scale = Vector2(4.7299, -1.49069)
 
 [node name="Bridge Gap2" parent="Bridge Gaps" instance=ExtResource("10_fk6m4")]
-position = Vector2(1323, 95)
+position = Vector2(1325, 93)
 scale = Vector2(4.7299, -1.49069)
 
 [node name="Bridge Gap3" parent="Bridge Gaps" instance=ExtResource("10_fk6m4")]
@@ -132,7 +136,7 @@ position = Vector2(1465, 672)
 scale = Vector2(4.7299, -1.49069)
 
 [node name="Spawned Students" type="Node2D" parent="."]
-position = Vector2(289, 182)
+position = Vector2(114, 200)
 
 [connection signal="spawn_student" from="Entrance and Exit/Level Entrance" to="." method="_on_level_entrance_spawn_student"]
 [connection signal="student_arrived_despawner" from="Entrance and Exit/Level Exit" to="." method="_on_level_exit_student_arrived_despawner"]
