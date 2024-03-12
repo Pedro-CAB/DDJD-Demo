@@ -50,7 +50,7 @@ func _on_pile_of_paper_study_found_paper(student, paper):
 	print("Study Found Paper!")
 	student.temporary_stop(1.5)  #Student stops moving for 1.5 secs
 	paper.queue_free() #Delete Paper Pile 
-	student.state = 6 # Set Student state to None again
+	student.state = Effects.None # Set Student state to None again
 
 
 func _on_level_exit_student_arrived_exit(node):

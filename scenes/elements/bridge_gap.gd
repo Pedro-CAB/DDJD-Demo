@@ -14,6 +14,7 @@ func build_bridge(body):
 		$".".add_child(bridge_node)
 		is_built = true
 		ruler_approaching.emit(body)
+		body.state = Effects.None
 
 func _on_left_cliff_body_entered(body):
 	build_bridge(body)
