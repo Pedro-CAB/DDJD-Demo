@@ -64,6 +64,8 @@ func _physics_process(delta):
 	if not paused:
 		velocity.x = direction.x * SPEED
 		move_and_slide()
+	else:
+		$AnimatedSprite2D.stop()
 	
 func pause():
 	last_direction = direction

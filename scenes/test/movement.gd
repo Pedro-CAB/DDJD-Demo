@@ -36,10 +36,10 @@ func _process(_delta):
 		if $Camera2D.position.x - camera_speed > 576:
 			$Camera2D.position.x = $Camera2D.position.x - camera_speed
 	elif Input.is_action_pressed("Move Camera Right") && not is_paused:
-		if $Camera2D.position.x + camera_speed < 1728:
+		if $Camera2D.position.x + camera_speed < 1771:
 			$Camera2D.position.x = $Camera2D.position.x + camera_speed
 	if Input.is_action_pressed("Move Camera Up") && not is_paused:
-		if $Camera2D.position.y - camera_speed > 322:
+		if $Camera2D.position.y - camera_speed > 275:
 			$Camera2D.position.y = $Camera2D.position.y - camera_speed
 	elif Input.is_action_pressed("Move Camera Down") && not is_paused:
 		if $Camera2D.position.y + camera_speed < 831:

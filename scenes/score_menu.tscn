@@ -1,0 +1,91 @@
+[gd_scene load_steps=5 format=3 uid="uid://fsyfnor8ira1"]
+
+[ext_resource type="Script" path="res://scenes/score_menu.gd" id="1_bymc8"]
+[ext_resource type="Texture2D" uid="uid://bmk7xsnhiiv05" path="res://graphics/182a97a789157e9217d619b60790dcb8.jpg" id="1_keto6"]
+[ext_resource type="Texture2D" uid="uid://cd8gcuduakgew" path="res://graphics/blank-sheet-of-paper-page-from-a-notebook-and-notebook-for-notes-with-copy-space-sketch-hand-drawn-illustration-vector-removebg-preview.png" id="2_jtxx2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fkdns"]
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Score Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bymc8")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(-5, 2)
+scale = Vector2(1.89069, 1.66904)
+texture = ExtResource("1_keto6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Score Sheet" type="Sprite2D" parent="."]
+position = Vector2(45, 263)
+scale = Vector2(4, 4)
+texture = ExtResource("2_jtxx2")
+
+[node name="Text Blocks" type="Label" parent="."]
+layout_mode = 0
+offset_left = -307.0
+offset_top = -242.0
+offset_right = 101.0
+offset_bottom = -89.0
+scale = Vector2(1.45419, 1.47108)
+label_settings = SubResource("LabelSettings_fkdns")
+horizontal_alignment = 3
+
+[node name="Number of Survivors" type="Label" parent="Text Blocks"]
+layout_mode = 0
+offset_left = -17.0
+offset_top = 10.0
+offset_right = 139.0
+offset_bottom = 37.0
+scale = Vector2(1.80972, 1.93937)
+text = "Students Saved:                 XXXX"
+label_settings = SubResource("LabelSettings_fkdns")
+
+[node name="Number of Deaths" type="Label" parent="Text Blocks"]
+layout_mode = 0
+offset_left = -15.1287
+offset_top = 61.8593
+offset_right = 150.871
+offset_bottom = 88.8593
+scale = Vector2(1.80972, 1.93937)
+text = "Students Lost:                    XXXX"
+label_settings = SubResource("LabelSettings_fkdns")
+
+[node name="Actions Used" type="Label" parent="Text Blocks"]
+layout_mode = 0
+offset_left = -15.1287
+offset_top = 115.561
+offset_right = 217.871
+offset_bottom = 142.561
+scale = Vector2(1.80972, 1.93937)
+text = "Actions Used:                     XXXX"
+label_settings = SubResource("LabelSettings_fkdns")
+
+[node name="Total Score" type="Label" parent="Text Blocks"]
+layout_mode = 0
+offset_left = -11.0027
+offset_top = 244.038
+offset_right = 221.997
+offset_bottom = 271.038
+scale = Vector2(1.80972, 1.93937)
+text = "Total Score:                        XXXX"
+label_settings = SubResource("LabelSettings_fkdns")
+
+[node name="Back Button" type="Button" parent="Text Blocks"]
+layout_mode = 2
+offset_left = 112.09
+offset_top = 331.729
+offset_right = 226.09
+offset_bottom = 362.729
+scale = Vector2(1.86876, 1.59696)
+text = "Back to Menu"
+
+[connection signal="pressed" from="Text Blocks/Back Button" to="." method="_on_back_button_pressed"]
