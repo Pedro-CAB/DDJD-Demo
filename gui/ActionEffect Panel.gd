@@ -14,9 +14,6 @@ var slides_amount = 3
 var study_amount = 3
 var clear_amount = 3
 
-func _process(_delta):
-	print(calculator_amount)
-
 func _on_calculator_button_pressed():
 	if calculator_amount > 0:
 		calculator_selected.emit()

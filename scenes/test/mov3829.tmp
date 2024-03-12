@@ -80,12 +80,12 @@ scale = Vector2(0.889571, 1.5)
 [node name="CanvasLayer" type="CanvasLayer" parent="GUI"]
 
 [node name="Student Counter" type="Label" parent="GUI/CanvasLayer"]
-offset_left = 991.0
-offset_top = -2.0
-offset_right = 1031.0
+offset_left = 1019.0
+offset_top = -1.99999
+offset_right = 1059.0
 offset_bottom = 21.0
 scale = Vector2(3.36786, 3.80768)
-text = "00/20"
+text = "0/20"
 label_settings = SubResource("LabelSettings_or7sw")
 horizontal_alignment = 1
 

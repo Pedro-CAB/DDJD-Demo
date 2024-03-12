@@ -13,7 +13,7 @@ size = Vector2(28, 24.5)
 script = ExtResource("1_m3ruu")
 
 [node name="Student Detector" type="Area2D" parent="."]
-collision_mask = 2
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Student Detector"]
 position = Vector2(6.5, 0)
