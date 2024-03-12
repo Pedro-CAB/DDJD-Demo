@@ -80,15 +80,14 @@ scale = Vector2(0.889571, 1.5)
 [node name="CanvasLayer" type="CanvasLayer" parent="GUI"]
 
 [node name="Student Counter" type="Label" parent="GUI/CanvasLayer"]
-offset_left = 984.0
-offset_top = 15.0
-offset_right = 1055.0
-offset_bottom = 64.0
-scale = Vector2(1.8208, 2.01263)
-text = "20 Alive
-00 Exited"
+offset_left = 991.0
+offset_top = -2.0
+offset_right = 1031.0
+offset_bottom = 21.0
+scale = Vector2(3.36786, 3.80768)
+text = "00/20"
 label_settings = SubResource("LabelSettings_or7sw")
-horizontal_alignment = 2
+horizontal_alignment = 1
 
 [node name="Piles of Paper" type="Node2D" parent="."]
 
@@ -131,15 +130,6 @@ position = Vector2(576, 322)
 [node name="One-Way Shortcut" type="Node2D" parent="."]
 position = Vector2(774, 354)
 scale = Vector2(3.29294, 3.69754)
-
-[node name="Counter" type="Label" parent="One-Way Shortcut"]
-offset_left = -7.89568
-offset_top = -22.4474
-offset_right = 32.1043
-offset_bottom = 0.552643
-scale = Vector2(0.390642, 0.379338)
-text = "10"
-horizontal_alignment = 1
 
 [node name="Shortcut Entrance" parent="One-Way Shortcut" instance=ExtResource("9_3di23")]
 collision_layer = 2

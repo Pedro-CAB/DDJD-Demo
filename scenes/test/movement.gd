@@ -9,6 +9,9 @@ const camera_speed = 10
 # How many reached the exit?
 var students_survived = 0
 
+# How many students can traverse the shortcut before it closes?
+var shortcut_limit = 10
+
 func _ready():
 	# How Many Students Should Spawn?
 	$"Entrance and Exit/Level Entrance".student_amount = 20
@@ -27,6 +30,8 @@ func _process(_delta):
 	elif Input.is_action_pressed("Move Camera Down"):
 		if $Camera2D.position.y + camera_speed < 831:
 			$Camera2D.position.y = $Camera2D.position.y + camera_speed
+	if shortcut_limit == 0 && $"One-Way Shortcut" != null:
+		$"One-Way Shortcut".queue_free()
 
 func _on_level_entrance_spawn_student():
 	var student = student_scene.instantiate()
@@ -59,10 +64,13 @@ func _on_pile_of_paper_study_found_paper(student, paper):
 
 func _on_level_exit_student_arrived_exit(node):
 	students_survived += 1
+	var txt = ""
+	txt += str($"Entrance and Exit/Level Entrance".student_amount) + " Total"
 	if(str(students_survived).length() == 1):
-		$"GUI/CanvasLayer/Student Counter".text = "0" + str(students_survived) + "/" + str($"Entrance and Exit/Level Entrance".student_amount)
+		txt += "\n0" + str(students_survived) + "Exited"
 	else:
-		$"GUI/CanvasLayer/Student Counter".text = str(students_survived) + "/" + str($"Entrance and Exit/Level Entrance".student_amount)
+		txt += "\n" + str(students_survived) + "Exited"
+	$"GUI/CanvasLayer/Student Counter".text = txt
 
 
 
@@ -72,4 +80,7 @@ func _on_level_exit_student_arrived_despawner(node):
 
 func _on_shortcut_entrance_body_entered(body):
 	print("Student Entered Shortcut!")
-	body.global_position = $"One-Way Shortcut/Shortcut Exit".global_position
+	if shortcut_limit > 0:
+		body.global_position = $"One-Way Shortcut/Shortcut Exit".global_position
+		shortcut_limit -= 1
+		$"One-Way Shortcut/Counter".text = str(shortcut_limit)
