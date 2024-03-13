@@ -9,7 +9,7 @@ var paused = false
 const SPEED = 100.0 #Standard Speed
 #const SPEED = 100.0 #For testing purposes
 
-enum Effects {Calculator, Monitor, Ruler, Slides, Study, CLear, None}
+enum Effects {Calculator, Monitor, Ruler, Slides, Study, CLear, None, Dead}
 var state = Effects.None #by default, the student has no effects applied
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -46,14 +46,16 @@ func _process(_delta):
 		$"Action Icons/Study".visible = true
 	if ($".".state == Effects.None or $".".state == Effects.CLear):
 		clear_role()
+	if ($".".state == Effects.Dead):
+		direction = Vector2.ZERO
 
 
 func _physics_process(delta):
 	# Add the gravity.
-	if not is_on_floor() && not paused:
+	if not is_on_floor() && not paused && state != Effects.Dead:
 		velocity.y += gravity * delta
 		$AnimatedSprite2D.play("Falling")
-	else:
+	elif state != Effects.Dead:
 		$AnimatedSprite2D.play("Running")
 	
 	if is_on_wall() && state != Effects.Slides && not paused:
@@ -81,6 +83,13 @@ func temporary_stop(time):
 	prev_direction = direction
 	direction = Vector2.ZERO
 	$"Stop Timer".start(time)
+	
+func kill():
+	state = Effects.Dead
+	$AnimatedSprite2D.stop()
+	$AnimatedSprite2D.play("Death")
+	$"Action Icons/Dead".visible = true
+	direction = Vector2.ZERO
 	
 
 # Check if Student was clicked

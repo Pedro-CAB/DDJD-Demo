@@ -1,6 +1,6 @@
 extends Node2D
 
-enum Effects {Calculator, Monitor, Ruler, Slides, Study, Clear, None}
+enum Effects {Calculator, Monitor, Ruler, Slides, Study, Clear, None, Dead}
 
 var state = Effects.None #the effect that is currently selected to be assigned to a student
 
@@ -21,3 +21,6 @@ func _on_action_effect_panel_study_selected():
 
 func _on_action_effect_panel_clear_selected():
 	state = Effects.Clear
+
+func _on_action_effect_panel_dead_selected():
+	state = Effects.Dead

@@ -9,7 +9,7 @@ collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_8l038")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-64, 58, 86, 59, -64, -67)
+polygon = PackedVector2Array(-64, -45, 86, 59, -64, -67)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.3)
