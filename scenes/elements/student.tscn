@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bg6gttrox42w6"]
+[gd_scene load_steps=27 format=3 uid="uid://bg6gttrox42w6"]
 
 [ext_resource type="Script" path="res://scripts/student.gd" id="1_uspsx"]
 [ext_resource type="Texture2D" uid="uid://n53ambex1m75" path="res://graphics/JumpPack_CharacterSpriteSheet.png" id="2_0g64k"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c6qcwjjpnrs4v" path="res://graphics/ruler icon.png" id="6_ekf46"]
 [ext_resource type="Texture2D" uid="uid://b487mvhfx7wxy" path="res://graphics/Presentation_icon_BLACK-01.png" id="7_ugx61"]
 [ext_resource type="Texture2D" uid="uid://nyykr700jumb" path="res://graphics/3241111.png" id="8_3m482"]
+[ext_resource type="Texture2D" uid="uid://dfdqoqkvhgo08" path="res://graphics/166529-removebg-preview.png" id="8_rmj36"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5ixn7"]
 atlas = ExtResource("2_0g64k")
@@ -77,7 +78,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_g1qbk")
 }],
-"loop": true,
+"loop": false,
 "name": &"Death",
 "speed": 8.0
 }, {
@@ -151,9 +152,7 @@ script = ExtResource("1_uspsx")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_r8y1e")
-animation = &"Idle"
-frame = 1
-frame_progress = 0.749179
+animation = &"Death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.6459e-07, -0.978263)
@@ -197,6 +196,11 @@ texture = ExtResource("7_ugx61")
 position = Vector2(0, -14.3479)
 scale = Vector2(0.015, 0.015)
 texture = ExtResource("8_3m482")
+
+[node name="Dead" type="Sprite2D" parent="Action Icons"]
+position = Vector2(0, -13.6957)
+scale = Vector2(0.015, 0.015)
+texture = ExtResource("8_rmj36")
 
 [connection signal="input_event" from="Clickable Area" to="." method="_on_clickable_area_input_event"]
 [connection signal="mouse_entered" from="Clickable Area" to="." method="_on_clickable_area_mouse_entered"]

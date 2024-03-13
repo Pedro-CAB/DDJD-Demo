@@ -47,16 +47,15 @@ func _process(_delta):
 	if ($".".state == Effects.None or $".".state == Effects.CLear):
 		clear_role()
 	if ($".".state == Effects.Dead):
-		$"Action Icons/Dead".visible = true
 		direction = Vector2.ZERO
 
 
 func _physics_process(delta):
 	# Add the gravity.
-	if not is_on_floor() && not paused:
+	if not is_on_floor() && not paused && state != Effects.Dead:
 		velocity.y += gravity * delta
 		$AnimatedSprite2D.play("Falling")
-	else:
+	elif state != Effects.Dead:
 		$AnimatedSprite2D.play("Running")
 	
 	if is_on_wall() && state != Effects.Slides && not paused:
@@ -84,6 +83,13 @@ func temporary_stop(time):
 	prev_direction = direction
 	direction = Vector2.ZERO
 	$"Stop Timer".start(time)
+	
+func kill():
+	state = Effects.Dead
+	$AnimatedSprite2D.stop()
+	$AnimatedSprite2D.play("Death")
+	$"Action Icons/Dead".visible = true
+	direction = Vector2.ZERO
 	
 
 # Check if Student was clicked

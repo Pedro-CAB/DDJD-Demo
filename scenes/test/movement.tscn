@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://5mkdw7gcq733" path="res://scenes/elements/level_exit.tscn" id="4_ylwnc"]
 [ext_resource type="PackedScene" uid="uid://qpqmsgoaoxen" path="res://scenes/elements/pile_of_paper.tscn" id="5_22yoa"]
 [ext_resource type="PackedScene" uid="uid://ct3001ysqavbo" path="res://scenes/pause_menu.tscn" id="5_crd4d"]
-[ext_resource type="PackedScene" uid="uid://darv6stpu42i7" path="res://scenes/elements/rocks.tscn" id="8_oxesh"]
+[ext_resource type="PackedScene" uid="uid://cufa5n5rm8t63" path="res://scenes/elements/rocks.tscn" id="8_oxesh"]
 [ext_resource type="PackedScene" uid="uid://cyltucxvl72v7" path="res://scenes/elements/shortcut_entrance.tscn" id="9_3di23"]
 [ext_resource type="PackedScene" uid="uid://qimq2syl7m1w" path="res://scenes/elements/shortcut_exit.tscn" id="9_pts5g"]
 [ext_resource type="PackedScene" uid="uid://7h7d81uo2tan" path="res://scenes/elements/bridge_gap.tscn" id="10_fk6m4"]
@@ -138,7 +138,8 @@ scale = Vector2(0.15315, 0.220197)
 [node name="Rocks" type="Node2D" parent="."]
 
 [node name="Rock" parent="Rocks" instance=ExtResource("8_oxesh")]
-position = Vector2(265, 390)
+position = Vector2(235, 392)
+scale = Vector2(0.71424, 0.74927)
 
 [node name="Rock 2" parent="Rocks" instance=ExtResource("8_oxesh")]
 position = Vector2(191, 1037)
@@ -265,12 +266,12 @@ shape = SubResource("RectangleShape2D_wpw2p")
 [connection signal="study_found_paper" from="Piles of Paper/Pile of Paper2" to="." method="_on_pile_of_paper_study_found_paper"]
 [connection signal="study_found_paper" from="Piles of Paper/Pile of Paper3" to="." method="_on_pile_of_paper_study_found_paper"]
 [connection signal="study_found_paper" from="Piles of Paper/Pile of Paper4" to="." method="_on_pile_of_paper_study_found_paper"]
-[connection signal="student_stuck" from="Rocks/Rock" to="." method="_on_rock_student_stuck"]
-[connection signal="student_stuck" from="Rocks/Rock 2" to="." method="_on_rock_student_stuck"]
-[connection signal="student_stuck" from="Rocks/Rock 3" to="." method="_on_rock_student_stuck"]
-[connection signal="student_stuck" from="Rocks/Rock 4" to="." method="_on_rock_student_stuck"]
-[connection signal="student_stuck" from="Rocks/Rock 5" to="." method="_on_rock_student_stuck"]
-[connection signal="student_stuck" from="Rocks/Rock 6" to="." method="_on_rock_student_stuck"]
+[connection signal="student_died" from="Rocks/Rock" to="." method="_on_rock_student_died"]
+[connection signal="student_died" from="Rocks/Rock 2" to="." method="_on_rock_2_student_died"]
+[connection signal="student_died" from="Rocks/Rock 3" to="." method="_on_rock_3_student_died"]
+[connection signal="student_died" from="Rocks/Rock 4" to="." method="_on_rock_4_student_died"]
+[connection signal="student_died" from="Rocks/Rock 5" to="." method="_on_rock_5_student_died"]
+[connection signal="student_died" from="Rocks/Rock 6" to="." method="_on_rock_6_student_died"]
 [connection signal="body_entered" from="One-Way Shortcut/Shortcut Entrance" to="." method="_on_shortcut_entrance_body_entered"]
 [connection signal="body_entered" from="Stairways/Stairway/Calculator Detection" to="." method="_on_calculator_detection_body_entered"]
 [connection signal="body_entered" from="Stairways/Stairway2/Calculator Detection 2" to="." method="_on_calculator_detection_2_body_entered"]

@@ -1,6 +1,6 @@
 extends Node2D
 
-signal student_stuck(body)
+signal student_died(body)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,7 +13,7 @@ func _process(delta):
 
 
 func _on_area_2d_body_entered(body):
-	print("student hit rocks")
+	student_died.emit(body)
 
 
 

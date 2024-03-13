@@ -133,6 +133,23 @@ func _on_pause_menu_restart_game():
 func _on_pause_menu_back_to_menu():
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
+func _on_rock_student_died(body):
+	body.kill()
+	
+func _on_rock_2_student_died(body):
+	body.kill()
 
-func _on_rock_student_stuck(body):
-	pass
+func _on_rock_3_student_died(body):
+	body.kill()
+
+
+func _on_rock_4_student_died(body):
+	body.kill()
+
+
+func _on_rock_5_student_died(body):
+	body.kill()
+
+
+func _on_rock_6_student_died(body):
+	body.kill()
