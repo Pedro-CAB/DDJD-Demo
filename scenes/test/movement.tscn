@@ -182,7 +182,7 @@ offset_top = -22.4474
 offset_right = 32.1043
 offset_bottom = 0.552643
 scale = Vector2(0.390642, 0.379338)
-text = "10"
+text = "15"
 horizontal_alignment = 1
 
 [node name="Shortcut Entrance" parent="One-Way Shortcut" instance=ExtResource("9_3di23")]

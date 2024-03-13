@@ -88,6 +88,7 @@ func kill():
 	state = Effects.Dead
 	$AnimatedSprite2D.stop()
 	$AnimatedSprite2D.play("Death")
+	clear_role()
 	$"Action Icons/Dead".visible = true
 	direction = Vector2.ZERO
 	

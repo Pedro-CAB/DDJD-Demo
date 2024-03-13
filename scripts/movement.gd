@@ -14,7 +14,7 @@ var students_survived = 0
 var dead_students = 0
 
 # How many students can traverse the shortcut before it closes?
-var shortcut_limit = 10
+var shortcut_limit = 15
 
 func pause_game(value):
 	if value:
