@@ -1,6 +1,6 @@
 extends Node2D
 
-enum Effects {Calculator, Monitor, Ruler, Slides, Study, Clear, None}
+enum Effects {Calculator, Monitor, Ruler, Slides, Study, Clear, None, Dead}
 
 var student_scene = preload("res://scenes/elements/student.tscn")
 
@@ -132,3 +132,7 @@ func _on_pause_menu_restart_game():
 
 func _on_pause_menu_back_to_menu():
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
+
+func _on_rock_student_stuck(body):
+	pass

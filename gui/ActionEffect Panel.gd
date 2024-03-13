@@ -6,12 +6,14 @@ signal ruler_selected()
 signal slides_selected()
 signal study_selected()
 signal clear_selected()
+signal dead_selected()
 
 var calculator_amount = 3
 var ruler_amount = 3
 var slides_amount = 3
 var study_amount = 3
 var clear_amount = 3
+var dead_amount = 0
 
 func _on_calculator_button_pressed():
 	if calculator_amount > 0:
@@ -46,3 +48,10 @@ func _on_clear_button_pressed():
 		clear_selected.emit()
 		clear_amount -= 1
 		$"Amounts/Clear".text = str(clear_amount)
+
+
+func _on_dead_button_pressed():
+	if dead_amount >= 0:
+
+		dead_amount += 1
+		$"Amounts/Dead".text = str(dead_amount)

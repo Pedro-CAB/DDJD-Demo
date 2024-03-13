@@ -9,7 +9,7 @@ var paused = false
 const SPEED = 100.0 #Standard Speed
 #const SPEED = 100.0 #For testing purposes
 
-enum Effects {Calculator, Monitor, Ruler, Slides, Study, CLear, None}
+enum Effects {Calculator, Monitor, Ruler, Slides, Study, CLear, None, Dead}
 var state = Effects.None #by default, the student has no effects applied
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -46,6 +46,9 @@ func _process(_delta):
 		$"Action Icons/Study".visible = true
 	if ($".".state == Effects.None or $".".state == Effects.CLear):
 		clear_role()
+	if ($".".state == Effects.Dead):
+		$"Action Icons/Dead".visible = true
+		direction = Vector2.ZERO
 
 
 func _physics_process(delta):
