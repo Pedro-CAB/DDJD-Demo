@@ -7,7 +7,6 @@ signal is_not_hovered(node)
 var paused = false
 
 const SPEED = 100.0 #Standard Speed
-#const SPEED = 100.0 #For testing purposes
 
 enum Effects {Calculator, Monitor, Ruler, Slides, Study, CLear, None, Dead}
 var state = Effects.None #by default, the student has no effects applied

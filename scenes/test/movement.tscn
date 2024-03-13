@@ -133,15 +133,15 @@ scale = Vector2(0.88251, 0.921891)
 [node name="Piles of Paper" type="Node2D" parent="."]
 
 [node name="Pile of Paper1" parent="Piles of Paper" instance=ExtResource("5_22yoa")]
-position = Vector2(1128, 567)
+position = Vector2(1216, 564)
 scale = Vector2(0.15315, 0.220197)
 
 [node name="Pile of Paper2" parent="Piles of Paper" instance=ExtResource("5_22yoa")]
-position = Vector2(2090, 227)
+position = Vector2(2225, 227)
 scale = Vector2(0.15315, 0.220197)
 
 [node name="Pile of Paper3" parent="Piles of Paper" instance=ExtResource("5_22yoa")]
-position = Vector2(1214, 567)
+position = Vector2(1617, 661)
 scale = Vector2(0.15315, 0.220197)
 
 [node name="Pile of Paper4" parent="Piles of Paper" instance=ExtResource("5_22yoa")]
