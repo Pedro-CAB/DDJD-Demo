@@ -1,13 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://26wmnutay2hs"]
+[gd_scene load_steps=16 format=3 uid="uid://26wmnutay2hs"]
 
-[ext_resource type="Script" path="res://scripts/movement.gd" id="1_gx1tk"]
+[ext_resource type="Script" path="res://scenes/test/movement.gd" id="1_gx1tk"]
 [ext_resource type="PackedScene" uid="uid://bjxihc0qyyllu" path="res://tilemaps/sky_and_soil.tscn" id="1_pbksg"]
 [ext_resource type="PackedScene" uid="uid://bg254sg3b5nwi" path="res://gui/action_assigner.tscn" id="2_1ua4q"]
 [ext_resource type="PackedScene" uid="uid://ct2e4biuuaudu" path="res://scenes/elements/level_entrance.tscn" id="3_yalv7"]
 [ext_resource type="PackedScene" uid="uid://5mkdw7gcq733" path="res://scenes/elements/level_exit.tscn" id="4_ylwnc"]
 [ext_resource type="PackedScene" uid="uid://qpqmsgoaoxen" path="res://scenes/elements/pile_of_paper.tscn" id="5_22yoa"]
 [ext_resource type="PackedScene" uid="uid://ct3001ysqavbo" path="res://scenes/pause_menu.tscn" id="5_crd4d"]
-[ext_resource type="PackedScene" uid="uid://fsyfnor8ira1" path="res://scenes/score_menu.tscn" id="7_5f8ed"]
 [ext_resource type="PackedScene" uid="uid://cufa5n5rm8t63" path="res://scenes/elements/rocks.tscn" id="8_oxesh"]
 [ext_resource type="PackedScene" uid="uid://cyltucxvl72v7" path="res://scenes/elements/shortcut_entrance.tscn" id="9_3di23"]
 [ext_resource type="PackedScene" uid="uid://qimq2syl7m1w" path="res://scenes/elements/shortcut_exit.tscn" id="9_pts5g"]
@@ -36,8 +35,7 @@ physics_material_override = SubResource("PhysicsMaterial_f87r2")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions/Platform 1"]
 position = Vector2(-1, 0)
-scale = Vector2(0.998722, 0.998056)
-polygon = PackedVector2Array(-407, -106, -118, -106, -119, 39, 121.155, 38.074, 121, 135, 168, 135, 169, 229, 311, 231, 313, 312, -119, 311, -117, 215, -311, 215, -310, 327, -215, 327, -213, 692, -21, 693, -19, 422, 699, 423, 699.894, 234.456, 937, 231, 938, 326, 1082, 326, 1083, 566, 2137, 566, 2143, 790, -407, 791)
+polygon = PackedVector2Array(-407, -106, -118, -106, -119, 39, 121, 39, 121, 135, 168, 135, 169, 229, 311, 231, 313, 312, -119, 311, -117, 215, -311, 215, -310, 327, -215, 327, -213, 692, -21, 693, -19, 422, 699, 423, 698, 231, 937, 231, 938, 326, 1082, 326, 1083, 566, 2137, 566, 2143, 790, -407, 791)
 
 [node name="Platform 2" type="StaticBody2D" parent="Collisions"]
 collision_layer = 2
@@ -114,7 +112,6 @@ offset_bottom = 192.0
 scale = Vector2(2.07243, 2.01889)
 
 [node name="Finish Game" type="Button" parent="GUI/CanvasLayer"]
-visible = false
 offset_left = 961.0
 offset_top = 533.0
 offset_right = 1065.0
@@ -122,26 +119,18 @@ offset_bottom = 564.0
 scale = Vector2(1.50372, 1.86583)
 text = "Finish Game"
 
-[node name="Score Menu" parent="GUI/CanvasLayer" instance=ExtResource("7_5f8ed")]
-visible = false
-offset_left = 581.0
-offset_top = 306.0
-offset_right = 581.0
-offset_bottom = 306.0
-scale = Vector2(0.88251, 0.921891)
-
 [node name="Piles of Paper" type="Node2D" parent="."]
 
-[node name="Pile of Paper1" parent="Piles of Paper" instance=ExtResource("5_22yoa")]
-position = Vector2(1128, 567)
+[node name="Pile of Paper" parent="Piles of Paper" instance=ExtResource("5_22yoa")]
+position = Vector2(2223, 519)
 scale = Vector2(0.15315, 0.220197)
 
 [node name="Pile of Paper2" parent="Piles of Paper" instance=ExtResource("5_22yoa")]
-position = Vector2(2090, 227)
+position = Vector2(2231, 230)
 scale = Vector2(0.15315, 0.220197)
 
 [node name="Pile of Paper3" parent="Piles of Paper" instance=ExtResource("5_22yoa")]
-position = Vector2(1214, 567)
+position = Vector2(1189, 567)
 scale = Vector2(0.15315, 0.220197)
 
 [node name="Pile of Paper4" parent="Piles of Paper" instance=ExtResource("5_22yoa")]
@@ -231,8 +220,8 @@ shape = SubResource("RectangleShape2D_wpw2p")
 
 [node name="Stairway2" parent="Stairways" instance=ExtResource("11_hhyip")]
 visible = false
-position = Vector2(911, 695)
-scale = Vector2(-1.51522, 1.71838)
+position = Vector2(910, 688)
+scale = Vector2(-1.5, 1.6)
 collision_layer = 0
 collision_mask = 0
 
@@ -275,8 +264,7 @@ shape = SubResource("RectangleShape2D_wpw2p")
 [connection signal="back_to_menu" from="GUI/CanvasLayer/Pause Menu" to="." method="_on_pause_menu_back_to_menu"]
 [connection signal="restart_game" from="GUI/CanvasLayer/Pause Menu" to="." method="_on_pause_menu_restart_game"]
 [connection signal="resume_game" from="GUI/CanvasLayer/Pause Menu" to="." method="_on_pause_menu_resume_game"]
-[connection signal="pressed" from="GUI/CanvasLayer/Finish Game" to="." method="_on_finish_game_pressed"]
-[connection signal="study_found_paper" from="Piles of Paper/Pile of Paper1" to="." method="_on_pile_of_paper_study_found_paper"]
+[connection signal="study_found_paper" from="Piles of Paper/Pile of Paper" to="." method="_on_pile_of_paper_study_found_paper"]
 [connection signal="study_found_paper" from="Piles of Paper/Pile of Paper2" to="." method="_on_pile_of_paper_study_found_paper"]
 [connection signal="study_found_paper" from="Piles of Paper/Pile of Paper3" to="." method="_on_pile_of_paper_study_found_paper"]
 [connection signal="study_found_paper" from="Piles of Paper/Pile of Paper4" to="." method="_on_pile_of_paper_study_found_paper"]

@@ -18,11 +18,10 @@ grow_vertical = 2
 script = ExtResource("1_bymc8")
 
 [node name="Background" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-5, 2)
 scale = Vector2(1.89069, 1.66904)
 texture = ExtResource("1_keto6")
-
-[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Score Sheet" type="Sprite2D" parent="."]
 position = Vector2(45, 263)
