@@ -130,6 +130,8 @@ offset_right = 581.0
 offset_bottom = 306.0
 scale = Vector2(0.88251, 0.921891)
 
+[node name="Finish Game Timer" type="Timer" parent="GUI"]
+
 [node name="Piles of Paper" type="Node2D" parent="."]
 
 [node name="Pile of Paper1" parent="Piles of Paper" instance=ExtResource("5_22yoa")]
@@ -271,11 +273,11 @@ shape = SubResource("RectangleShape2D_wpw2p")
 
 [connection signal="spawn_student" from="Entrance and Exit/Level Entrance" to="." method="_on_level_entrance_spawn_student"]
 [connection signal="student_arrived_despawner" from="Entrance and Exit/Level Exit" to="." method="_on_level_exit_student_arrived_despawner"]
-[connection signal="student_arrived_exit" from="Entrance and Exit/Level Exit" to="." method="_on_level_exit_student_arrived_exit"]
 [connection signal="back_to_menu" from="GUI/CanvasLayer/Pause Menu" to="." method="_on_pause_menu_back_to_menu"]
 [connection signal="restart_game" from="GUI/CanvasLayer/Pause Menu" to="." method="_on_pause_menu_restart_game"]
 [connection signal="resume_game" from="GUI/CanvasLayer/Pause Menu" to="." method="_on_pause_menu_resume_game"]
 [connection signal="pressed" from="GUI/CanvasLayer/Finish Game" to="." method="_on_finish_game_pressed"]
+[connection signal="timeout" from="GUI/Finish Game Timer" to="." method="_on_finish_game_timer_timeout"]
 [connection signal="study_found_paper" from="Piles of Paper/Pile of Paper1" to="." method="_on_pile_of_paper_study_found_paper"]
 [connection signal="study_found_paper" from="Piles of Paper/Pile of Paper2" to="." method="_on_pile_of_paper_study_found_paper"]
 [connection signal="study_found_paper" from="Piles of Paper/Pile of Paper3" to="." method="_on_pile_of_paper_study_found_paper"]

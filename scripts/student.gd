@@ -6,14 +6,13 @@ signal is_not_hovered(node)
 
 var paused = false
 
-const SPEED = 6000.0 #Standard Speed
+const SPEED = 100.0 #Standard Speed
 
 enum Effects {Calculator, Monitor, Ruler, Slides, Study, CLear, None, Dead}
 var state = Effects.None #by default, the student has no effects applied
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var prev_direction : Vector2 #to save direction before stopping
 var direction : Vector2
 var last_direction : Vector2
 
@@ -31,21 +30,28 @@ func clear_role():
 func _process(_delta):
 	if ($".".state == Effects.Calculator):
 		$"Action Icons/Calculator".visible = true
-	if ($".".state == Effects.Monitor):
+	elif ($".".state == Effects.Monitor):
 		$"Action Icons/Monitor".visible = true
-	if ($".".state == Effects.Ruler):
+	elif ($".".state == Effects.Ruler):
 		$"Action Icons/Ruler".visible = true
-	if ($".".state == Effects.Slides):
+	elif ($".".state == Effects.Slides):
 		$"Action Icons/Slides".visible = true
 		direction = Vector2.ZERO
 		set_collision_layer_value(2,true)
 		set_collision_mask_value(1, true)
-		$AnimatedSprite2D.play("Idle")
-	if ($".".state == Effects.Study):
+	elif ($".".state == Effects.Study):
 		$"Action Icons/Study".visible = true
-	if ($".".state == Effects.None or $".".state == Effects.CLear):
+	elif ($".".state == Effects.None or $".".state == Effects.CLear):
 		clear_role()
-	if ($".".state == Effects.Dead):
+		set_collision_layer_value(1,true)
+		set_collision_mask_value(2, true)
+		set_collision_layer_value(2,false)
+		set_collision_mask_value(1, false)
+	elif ($".".state == Effects.Dead):
+		set_collision_layer_value(1,true)
+		set_collision_mask_value(2, true)
+		set_collision_layer_value(2,false)
+		set_collision_mask_value(1, false)
 		direction = Vector2.ZERO
 
 
@@ -54,18 +60,20 @@ func _physics_process(delta):
 	if not is_on_floor() && not paused && state != Effects.Dead:
 		velocity.y += gravity * delta
 		$AnimatedSprite2D.play("Falling")
-	elif state != Effects.Dead:
+	elif not paused && state != Effects.Dead:
 		$AnimatedSprite2D.play("Running")
 	
 	if is_on_wall() && state != Effects.Slides && not paused:
 		direction.x = - direction.x
 		$AnimatedSprite2D.flip_h = !$AnimatedSprite2D.flip_h
 		last_direction = direction
-
+	
 	if not paused:
-		velocity.x = direction.x * SPEED * delta
+		velocity.x = direction.x * SPEED
 		move_and_slide()
-	else:
+		if state == Effects.Slides:
+			$AnimatedSprite2D.play("Idle")
+	elif state != Effects.Dead:
 		$AnimatedSprite2D.stop()
 	
 func pause():
@@ -79,7 +87,7 @@ func unpause():
 
 # Stop Student Movement for time seconds
 func temporary_stop(time):
-	prev_direction = direction
+	last_direction = direction
 	direction = Vector2.ZERO
 	$"Stop Timer".start(time)
 	
@@ -106,4 +114,4 @@ func _on_clickable_area_mouse_exited():
 
 
 func _on_stop_timer_timeout():
-	direction = prev_direction
+	direction = last_direction

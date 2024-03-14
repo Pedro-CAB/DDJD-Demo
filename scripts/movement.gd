@@ -77,7 +77,7 @@ func _on_level_entrance_spawn_student():
 
 func _on_student_is_clicked(node):
 	if Input.is_action_just_pressed("Assign  Action or Effect"):
-		if $"GUI/Action Assigner".state != Effects.None:
+		if $"GUI/Action Assigner".state != Effects.None && ($"GUI/Action Assigner".state == Effects.Clear or node.state == Effects.None or node.state == Effects.Clear):
 			node.state = $"GUI/Action Assigner".state
 			$"GUI/Action Assigner".reduce_effect()
 			$"GUI/Action Assigner".update_display()
@@ -96,11 +96,6 @@ func _on_pile_of_paper_study_found_paper(student, paper):
 	paper.queue_free() #Delete Paper Pile 
 	student.state = Effects.None # Set Student state to None again
 
-
-func _on_level_exit_student_arrived_exit(node):
-	students_survived += 1
-	update_counter()
-
 func update_counter():
 	var txt = ""
 	txt += str($"Entrance and Exit/Level Entrance".student_amount) + "   Total"
@@ -115,6 +110,8 @@ func update_counter():
 	$"GUI/CanvasLayer/Student Counter".text = txt
 
 func _on_level_exit_student_arrived_despawner(node):
+	students_survived += 1
+	update_counter()
 	node.queue_free()
 
 
@@ -194,4 +191,12 @@ func _on_rock_6_student_died(body):
 
 
 func _on_finish_game_pressed():
+	$"GUI/Finish Game Timer".start(3)
+	for s in $"Spawned Students".get_children():
+		s.kill
+		
+
+
+
+func _on_finish_game_timer_timeout():
 	show_score()
