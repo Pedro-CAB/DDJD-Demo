@@ -6,7 +6,7 @@ signal is_not_hovered(node)
 
 var paused = false
 
-const SPEED = 100.0 #Standard Speed
+const SPEED = 6000.0 #Standard Speed
 
 enum Effects {Calculator, Monitor, Ruler, Slides, Study, CLear, None, Dead}
 var state = Effects.None #by default, the student has no effects applied
@@ -63,7 +63,7 @@ func _physics_process(delta):
 		last_direction = direction
 
 	if not paused:
-		velocity.x = direction.x * SPEED
+		velocity.x = direction.x * SPEED * delta
 		move_and_slide()
 	else:
 		$AnimatedSprite2D.stop()
