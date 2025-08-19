@@ -1,11 +1,11 @@
 # Path of Excelence
 ## Project Requirements
-- [ ] Side View
-- [ ] Autonomous NPC's
-- [ ] Goal: Reach the exit
-- [ ] Minimum of 3 types of Actions/Effects
-- [ ] Minimum of 2 type of Obstacles
-- [ ] Score
+- [X] Side View
+- [X] Autonomous NPC's
+- [X] Goal: Reach the exit
+- [X] Minimum of 3 types of Actions/Effects
+- [X] Minimum of 2 type of Obstacles
+- [X] Score
 ## Game Mechanics
 In Path of Excellence, your objective is to guide a bunch of students through their journey during a college exam. By assigning Actions and Effects to them, you give them abilities they can use in order to arrive the end of the exam without dooming themselves! Help them find the best path to a good grade, prevent them of falling prey to dangerous traps and do it as fast as you can, as you help these students trail their path to excellence!
 ### Side View
